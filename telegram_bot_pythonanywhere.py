@@ -27,34 +27,6 @@ async def on_startup(_):
 	print("Бот начал работу")
 
 
-# Картинки для менюшек
-menu_one="https://downloader.disk.yandex.ru/preview/711bb1adff875b15eb27bc2e953f8d0b36a69eecb3a2ca4648143ee0aa223585/63c1af3e/_6tncDV3aVZTsQg0TZbCornwjRjeQl6Sbl7ryrTKPw9pPdoQLXcQ1r0Yu5Untrt8SGGTmFGHYgs8E_rm6dSkYA%3D%3D?uid=0&filename=menu_one.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-ios="https://downloader.disk.yandex.ru/preview/5b42c746b53921a74847b49334ef13e01f2864a5e758af36484f783248b9f5f8/63c1af84/1iEydv63EpJWU_e7x7LDfqX3ATg9TGRKmTLY0YJUpIRbS974E5ceNrIrAqGV3o-TvDf9AYWnpGhBpJ15kq8vPw%3D%3D?uid=0&filename=ios.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-andoid="https://downloader.disk.yandex.ru/preview/5f590d1bcdda15d56e668bba0c430c5714439e97a3e188401357306c4b101eb2/63c1afb3/lsX9zrLWoYPzhyZU41o5w6X3ATg9TGRKmTLY0YJUpITesx_k25DxwZNvFQTOTgbNV1IjEwIpXQ4ssHZ9Bk8ywg%3D%3D?uid=0&filename=android.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-pc="https://downloader.disk.yandex.ru/preview/c2f1fbb4c7d3c2a355d7d61785ab22188ea5f22530e92a1f322a740a6501e478/63c1afe4/MNQlWgSL62OIKo3AGtl_v6X3ATg9TGRKmTLY0YJUpIQD6nmvIEl_RH7MzyL3Flp8Iowu8MDThx2y9aZ5ZE9loQ%3D%3D?uid=0&filename=pc.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-google_play="https://downloader.disk.yandex.ru/preview/96cff67912e20350583aa5e39a9bc6a0994ec30ef871a46c4a8444dde4134963/63d53985/lw9UVvCoowbEvBhKKB6sLYaa__hDX-jp_fjofm25VinHzXea_bSmCdK1PkFvjK4JS2ihJDr4UrHs0TjYNz4i8w%3D%3D?uid=0&filename=google_play.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-faq="https://downloader.disk.yandex.ru/preview/87f33def26b09db3e18c3dd2f3137cd3a43a08c83c2f6a02301fbd6035c6615a/63c1b002/cVQro105INirqiPWEro9H6X3ATg9TGRKmTLY0YJUpISHHAmrL6lUr33tyAmW2_qwI3ZwRG3eV-ovVOZmbOYMhg%3D%3D?uid=0&filename=FAQ.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-
-# Картинки для менюшек English
-en_menu="https://downloader.disk.yandex.ru/preview/a41d6e5b6e080dca6a0b27e0a2e10a3b93ebc5249c3a3e1a8b96f65ddee0c5f2/63d43877/8tUqByIlKdFjR7xnNbgYj0aXDJB59eX7utlYUyhGcf13gQHfmnklgyCQDu03CMNZ4VgzQDxwqs7YESJ7RPvBRA%3D%3D?uid=0&filename=mainmenu.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-en_social_network="https://downloader.disk.yandex.ru/preview/9e70fb7803245d98c211e0da3466d026bc57bd9a65ecd1a168ff36f3b8d0310c/63c1b070/nA_Tzw5hTAom4eLxCwtmX6X3ATg9TGRKmTLY0YJUpISRDKBSZerOmTeBwgs_AoTsQ8IeF_4aLiIgLFstdOiqBA%3D%3D?uid=0&filename=en_social_network.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-en_donation="https://downloader.disk.yandex.ru/preview/47d815b9afdaeb8a78227244ae18100ec9ab26db7f47a2ea7ef7227f537f960a/63c1b091/iHeFI6ozuVm4jxnyqkivl6X3ATg9TGRKmTLY0YJUpIRp9GktWZbSD8CYW5bOoozojw2HsB_q8F2vChjF_ASPvA%3D%3D?uid=0&filename=en_donation.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-en_mod_bl="https://downloader.disk.yandex.ru/preview/d77ef2bdff300f67bc3dfa76d428e50a2831c23fb027f785f3cc82c217bb504b/63c1b081/6CJXf9gXYkwgKeJuReORQbnwjRjeQl6Sbl7ryrTKPw94tzTUKvV07Tzv4_HOBQpduUo-Uz7qHopuycX_qB2HAA%3D%3D?uid=0&filename=en_mod_bl.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-en_platform="https://downloader.disk.yandex.ru/preview/0856ad63f6b1604d107cf01f435a3acb2870138debf1a821202ec6296d1102d2/63c1b0b0/KniNQVNcyYLVfZFvpQk_VrnwjRjeQl6Sbl7ryrTKPw9aIHZN5gDMTD2IB6NuXpiPBDcKAuknVXsIhEAr2IoqVg%3D%3D?uid=0&filename=en_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-en_phone="https://downloader.disk.yandex.ru/preview/ab4d78a35c261ef702b4f7cc4b5831d77d86907a1d53d878232de22c9bcdf556/63d42a9a/sMY82TkfDdbpLU_KYp5ABHq9fksKA_u6Qdlxi1mzlvkYnKyNv5mu8n5nFdECD8WnvEzBXTA5xk_aVhWX8A57Vw%3D%3D?uid=0&filename=phone.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-en_profile="https://downloader.disk.yandex.ru/preview/dce9ab49782fe5182a7772c6a3cc164b74c6b38cdfce13ae96691cb6c7fdc634/63c1b0a1/s0oqgq8sySb2pAGHKhdAv6X3ATg9TGRKmTLY0YJUpISzy3nZJGCDYSf3glLT8pfLn_NK5CQ3-BGJ0RYRMMG39Q%3D%3D?uid=0&filename=en_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-
-# Картинки для менюшек Russian
-rus_menu="https://downloader.disk.yandex.ru/preview/170dd84ecdd0e02a097dcb64a021a97c445181048d4d1b22cccd10867a8e5041/63c1b46a/BEY3ThlvSC5pLmNSlclnc9-rcZs5RLWR3E1vERxC9CgFY7Czim8bvmNQ7ppNK1A8NTJ1cnQ4t8Wfgd1UHtE3Pw%3D%3D?uid=0&filename=rus_menu.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_social_network="https://downloader.disk.yandex.ru/preview/5e6eaa54cbd5d273ed746392430ee67368b115b52be709a92067dc7a6881bd80/63c1b04c/0MK89FED-4X2FcfnPeA9y6X3ATg9TGRKmTLY0YJUpITIE_sADpIQGmAA6lNp-D4kDRRADv9EHBTb8y2v7B6Tzw%3D%3D?uid=0&filename=rus_social_network.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_donation="https://downloader.disk.yandex.ru/preview/d27eae5cda0522b720a1374cb15fe70b00866d5002ee80c256100c31b6428754/63c1b024/lCvTYZkOtl_KiCVwROLU4aX3ATg9TGRKmTLY0YJUpIRAZFVTQVGzo0u5ul1B10bh_B9lSwVv1bqwwGwSeWABmw%3D%3D?uid=0&filename=rus_donation.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_mod_bl="https://downloader.disk.yandex.ru/preview/713634f417141a913e250c473364de52fefaf4c71ba50673bb99ea591e76b39b/63c1b013/ekNSf85xrnEWXBFg-lT1z7nwjRjeQl6Sbl7ryrTKPw_oUKVUk4sd2kC9uuhEYadBpyH1tpWLS4Q0Sv775Jf7Aw%3D%3D?uid=0&filename=rus_mod_bl.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_platform="https://downloader.disk.yandex.ru/preview/06105be0af89d22c9670a08316b4b46e0f481bfe92d4a832d74fc8b9ad89c1a8/63c1b03b/jkk3Y7EBMq8COZs_yYwMI7nwjRjeQl6Sbl7ryrTKPw8rEB7s5cCmyZFg6ntzpGbUWhwhDkefJe83IztboXiOVA%3D%3D?uid=0&filename=rus_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_phone="https://downloader.disk.yandex.ru/preview/51d2f367a1a41aa520cfc049eaec03d0d4c4212156a41f1daf28efa75fec1507/63d42ae4/IasrU8Hu2XzBVjdC6D6qZFBavCHoxKachbVWEqGMJmwxvAxbP3osMcrGPezZc3VuXhMOHAM2IACzYjAhChesVw%3D%3D?uid=0&filename=%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb69b41048387bc2d9c1f9e7cb8c5349d9404ec053/63c1b05b/YgAWFr1vJHk_O_uT15w--aX3ATg9TGRKmTLY0YJUpIRVDHxEdaip2EyFseskn7OsIQ737D4UmDZHbGTolY1g3A%3D%3D?uid=0&filename=rus_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-
-
-
 # Клавиатура номер 1 (выбором языка)
 mainMenu_en_rus = InlineKeyboardMarkup(row_width=2)
 lang_rus = InlineKeyboardButton(text="Russian 🇷🇺", callback_data="lang_rus")
@@ -75,7 +47,6 @@ mainMenu_en_rus_two.add(lang_rus_two)
 
 
 
-#-----------------------------------------------------------------Инлайн клавиатуры-----------------------------------------------------------------
 # English
 # Клавиатура номер 1 (English_main_menu)
 en_mainMenu = InlineKeyboardMarkup(row_width=2)
@@ -118,10 +89,12 @@ en_in_ios.add(en_back_ios)
 en_in_android = InlineKeyboardMarkup(row_width=2)
 en_in_google_play = InlineKeyboardButton(text="GOOGLE PLAY 👾", callback_data="en_in_google_play")
 en_in_cars_two = InlineKeyboardButton(text="Cars 🚗", url="https://disk.yandex.ru/d/VEy132RmANfIMA", callback_data="en_in_cars_two")
+en_in_mosaic = InlineKeyboardButton(text="Mosaic 🧠",url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g", callback_data="en_in_mosaic")
 en_back_android = InlineKeyboardButton(text="Back", callback_data="en_back_android")
 
 # Добавляем кнопки для клавиатуры номер 4 (android)
 en_in_android.add(en_in_google_play, en_in_cars_two)
+en_in_android.add(en_in_mosaic)
 en_in_android.add(en_back_android)
 
 
@@ -269,10 +242,12 @@ rus_in_ios.add(rus_back_ios)
 rus_in_android = InlineKeyboardMarkup(row_width=2)
 rus_in_google_play = InlineKeyboardButton(text="GOOGLE PLAY 👾", callback_data="rus_in_google_play")
 rus_in_cars_two = InlineKeyboardButton(text="Cars 🚗", url="https://disk.yandex.ru/d/VEy132RmANfIMA", callback_data="rus_in_cars_two")
+rus_in_mosaic = InlineKeyboardButton(text="Mosaic 🧠",url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g", callback_data="rus_in_mosaic")
 rus_back_android = InlineKeyboardButton(text="Назад", callback_data="rus_back_android")
 
 # Добавляем кнопки для клавиатуры номер 4 (android)
 rus_in_android.add(rus_in_google_play, rus_in_cars_two)
+rus_in_android.add(rus_in_mosaic)
 rus_in_android.add(rus_back_android)
 
 
@@ -377,14 +352,40 @@ rus_in_donation.add(rus_back_donat)
 
 
 
-#-----------------------------------------------------------------Хендлеры-----------------------------------------------------------------
+# Картинки для менюшек
+menu_one="https://downloader.disk.yandex.ru/preview/711bb1adff875b15eb27bc2e953f8d0b36a69eecb3a2ca4648143ee0aa223585/63c1af3e/_6tncDV3aVZTsQg0TZbCornwjRjeQl6Sbl7ryrTKPw9pPdoQLXcQ1r0Yu5Untrt8SGGTmFGHYgs8E_rm6dSkYA%3D%3D?uid=0&filename=menu_one.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+ios="https://downloader.disk.yandex.ru/preview/5b42c746b53921a74847b49334ef13e01f2864a5e758af36484f783248b9f5f8/63c1af84/1iEydv63EpJWU_e7x7LDfqX3ATg9TGRKmTLY0YJUpIRbS974E5ceNrIrAqGV3o-TvDf9AYWnpGhBpJ15kq8vPw%3D%3D?uid=0&filename=ios.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+andoid="https://downloader.disk.yandex.ru/preview/5f590d1bcdda15d56e668bba0c430c5714439e97a3e188401357306c4b101eb2/63c1afb3/lsX9zrLWoYPzhyZU41o5w6X3ATg9TGRKmTLY0YJUpITesx_k25DxwZNvFQTOTgbNV1IjEwIpXQ4ssHZ9Bk8ywg%3D%3D?uid=0&filename=android.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+pc="https://downloader.disk.yandex.ru/preview/c2f1fbb4c7d3c2a355d7d61785ab22188ea5f22530e92a1f322a740a6501e478/63c1afe4/MNQlWgSL62OIKo3AGtl_v6X3ATg9TGRKmTLY0YJUpIQD6nmvIEl_RH7MzyL3Flp8Iowu8MDThx2y9aZ5ZE9loQ%3D%3D?uid=0&filename=pc.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+google_play="https://downloader.disk.yandex.ru/preview/96cff67912e20350583aa5e39a9bc6a0994ec30ef871a46c4a8444dde4134963/63d53985/lw9UVvCoowbEvBhKKB6sLYaa__hDX-jp_fjofm25VinHzXea_bSmCdK1PkFvjK4JS2ihJDr4UrHs0TjYNz4i8w%3D%3D?uid=0&filename=google_play.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+faq="https://downloader.disk.yandex.ru/preview/87f33def26b09db3e18c3dd2f3137cd3a43a08c83c2f6a02301fbd6035c6615a/63c1b002/cVQro105INirqiPWEro9H6X3ATg9TGRKmTLY0YJUpISHHAmrL6lUr33tyAmW2_qwI3ZwRG3eV-ovVOZmbOYMhg%3D%3D?uid=0&filename=FAQ.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+
+# Картинки для менюшек English
+en_menu="https://downloader.disk.yandex.ru/preview/a41d6e5b6e080dca6a0b27e0a2e10a3b93ebc5249c3a3e1a8b96f65ddee0c5f2/63d43877/8tUqByIlKdFjR7xnNbgYj0aXDJB59eX7utlYUyhGcf13gQHfmnklgyCQDu03CMNZ4VgzQDxwqs7YESJ7RPvBRA%3D%3D?uid=0&filename=mainmenu.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_social_network="https://downloader.disk.yandex.ru/preview/9e70fb7803245d98c211e0da3466d026bc57bd9a65ecd1a168ff36f3b8d0310c/63c1b070/nA_Tzw5hTAom4eLxCwtmX6X3ATg9TGRKmTLY0YJUpISRDKBSZerOmTeBwgs_AoTsQ8IeF_4aLiIgLFstdOiqBA%3D%3D?uid=0&filename=en_social_network.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_donation="https://downloader.disk.yandex.ru/preview/47d815b9afdaeb8a78227244ae18100ec9ab26db7f47a2ea7ef7227f537f960a/63c1b091/iHeFI6ozuVm4jxnyqkivl6X3ATg9TGRKmTLY0YJUpIRp9GktWZbSD8CYW5bOoozojw2HsB_q8F2vChjF_ASPvA%3D%3D?uid=0&filename=en_donation.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_mod_bl="https://downloader.disk.yandex.ru/preview/d77ef2bdff300f67bc3dfa76d428e50a2831c23fb027f785f3cc82c217bb504b/63c1b081/6CJXf9gXYkwgKeJuReORQbnwjRjeQl6Sbl7ryrTKPw94tzTUKvV07Tzv4_HOBQpduUo-Uz7qHopuycX_qB2HAA%3D%3D?uid=0&filename=en_mod_bl.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_platform="https://downloader.disk.yandex.ru/preview/0856ad63f6b1604d107cf01f435a3acb2870138debf1a821202ec6296d1102d2/63c1b0b0/KniNQVNcyYLVfZFvpQk_VrnwjRjeQl6Sbl7ryrTKPw9aIHZN5gDMTD2IB6NuXpiPBDcKAuknVXsIhEAr2IoqVg%3D%3D?uid=0&filename=en_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_phone="https://downloader.disk.yandex.ru/preview/ab4d78a35c261ef702b4f7cc4b5831d77d86907a1d53d878232de22c9bcdf556/63d42a9a/sMY82TkfDdbpLU_KYp5ABHq9fksKA_u6Qdlxi1mzlvkYnKyNv5mu8n5nFdECD8WnvEzBXTA5xk_aVhWX8A57Vw%3D%3D?uid=0&filename=phone.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_profile="https://downloader.disk.yandex.ru/preview/dce9ab49782fe5182a7772c6a3cc164b74c6b38cdfce13ae96691cb6c7fdc634/63c1b0a1/s0oqgq8sySb2pAGHKhdAv6X3ATg9TGRKmTLY0YJUpISzy3nZJGCDYSf3glLT8pfLn_NK5CQ3-BGJ0RYRMMG39Q%3D%3D?uid=0&filename=en_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+
+# Картинки для менюшек Russian
+rus_menu="https://downloader.disk.yandex.ru/preview/170dd84ecdd0e02a097dcb64a021a97c445181048d4d1b22cccd10867a8e5041/63c1b46a/BEY3ThlvSC5pLmNSlclnc9-rcZs5RLWR3E1vERxC9CgFY7Czim8bvmNQ7ppNK1A8NTJ1cnQ4t8Wfgd1UHtE3Pw%3D%3D?uid=0&filename=rus_menu.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_social_network="https://downloader.disk.yandex.ru/preview/5e6eaa54cbd5d273ed746392430ee67368b115b52be709a92067dc7a6881bd80/63c1b04c/0MK89FED-4X2FcfnPeA9y6X3ATg9TGRKmTLY0YJUpITIE_sADpIQGmAA6lNp-D4kDRRADv9EHBTb8y2v7B6Tzw%3D%3D?uid=0&filename=rus_social_network.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_donation="https://downloader.disk.yandex.ru/preview/d27eae5cda0522b720a1374cb15fe70b00866d5002ee80c256100c31b6428754/63c1b024/lCvTYZkOtl_KiCVwROLU4aX3ATg9TGRKmTLY0YJUpIRAZFVTQVGzo0u5ul1B10bh_B9lSwVv1bqwwGwSeWABmw%3D%3D?uid=0&filename=rus_donation.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_mod_bl="https://downloader.disk.yandex.ru/preview/713634f417141a913e250c473364de52fefaf4c71ba50673bb99ea591e76b39b/63c1b013/ekNSf85xrnEWXBFg-lT1z7nwjRjeQl6Sbl7ryrTKPw_oUKVUk4sd2kC9uuhEYadBpyH1tpWLS4Q0Sv775Jf7Aw%3D%3D?uid=0&filename=rus_mod_bl.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_platform="https://downloader.disk.yandex.ru/preview/06105be0af89d22c9670a08316b4b46e0f481bfe92d4a832d74fc8b9ad89c1a8/63c1b03b/jkk3Y7EBMq8COZs_yYwMI7nwjRjeQl6Sbl7ryrTKPw8rEB7s5cCmyZFg6ntzpGbUWhwhDkefJe83IztboXiOVA%3D%3D?uid=0&filename=rus_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_phone="https://downloader.disk.yandex.ru/preview/51d2f367a1a41aa520cfc049eaec03d0d4c4212156a41f1daf28efa75fec1507/63d42ae4/IasrU8Hu2XzBVjdC6D6qZFBavCHoxKachbVWEqGMJmwxvAxbP3osMcrGPezZc3VuXhMOHAM2IACzYjAhChesVw%3D%3D?uid=0&filename=%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb69b41048387bc2d9c1f9e7cb8c5349d9404ec053/63c1b05b/YgAWFr1vJHk_O_uT15w--aX3ATg9TGRKmTLY0YJUpIRVDHxEdaip2EyFseskn7OsIQ737D4UmDZHbGTolY1g3A%3D%3D?uid=0&filename=rus_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+
+
 # 1 меню выбор языка
 @dp.message_handler(commands=["start"])
 async def command_start(message: types.Message):
     await bot.send_photo(message.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
 
 
-# 1.2 меню выбор языка 
+# 1.2 меню выбор языка
 @dp.callback_query_handler(text_contains="start")
 async def mainMenu_en_rus_two(call: types.CallbackQuery):
     await bot.delete_message(call.from_user.id, call.message.message_id)
@@ -393,14 +394,14 @@ async def mainMenu_en_rus_two(call: types.CallbackQuery):
         await bot.send_message(call.from_user.id, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
 
 
-# Итерация с кнопок English и Russian на их менюшки 
+# Итерация с кнопок English и Russian на их менюшки
 @dp.callback_query_handler(text_contains="lang_")
 async def lang_all(call: types.CallbackQuery):
     await bot.delete_message(call.from_user.id, call.message.message_id)
 
     if call.data == "lang_en":
         await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
-    
+
     elif call.data == "lang_rus":
         await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
 
@@ -565,6 +566,7 @@ async def it_buttons_rus(call: types.CallbackQuery):
         await bot.send_photo(call.from_user.id, photo=rus_profile, caption=f"ID вашего профиля: {call.from_user.id} \nВы человек \nЖелаем удачи в пользовании ботом 🇷🇺", reply_markup=rus_in_Profile)
     elif call.data == "rus_in_donation":
         await bot.send_photo(call.from_user.id, photo=rus_donation, caption="Вы можете помочь нам стать лучше 🇷🇺", reply_markup=rus_in_donation)
+
 
 
 # Register dispather
