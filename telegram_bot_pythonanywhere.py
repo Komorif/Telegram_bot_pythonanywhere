@@ -424,10 +424,47 @@ async def lang_rus_back(call: types.CallbackQuery):
         await bot.send_photo(call.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
 
 
-# Обычное эхо в боте которое на слово отвечает этим же словом
-@dp.message_handler()
-async def echo_message(message: types.Message):
-    await bot.send_message(message.from_user.id, message.text)
+# Продвинутое эхо
+@dp.message_handler(content_types=[
+	types.ContentType.DOCUMENT, types.ContentType.PHOTO,
+	types.ContentType.STICKER, types.ContentType.VIDEO,
+	types.ContentType.TEXT,  types.ContentType.ANIMATION
+])
+async def download_doc(message: types.Message):
+    # Если (документ) работает также с gif
+	if 'document' in message:
+		await message.answer_document(message.document.file_id)
+
+		# Необязательная загрузка
+		#await message.document.download()
+
+	# Если (фото)
+	elif 'photo' in message:
+		await message.answer_photo(message.photo[-1].file_id)
+
+		# Необязательная загрузка
+		#await message.photo[-1].download()
+
+	# Если (стикер)
+	elif "sticker" in message:
+		await message.answer_sticker(message.sticker.file_id)
+
+		# Необязательная загрузка
+		#await message.sticker.download()
+
+	# Если (видео)
+	elif "video" in message:
+		await message.answer_video(message.video.file_id)
+
+		# Необязательная загрузка
+		#await message.video.download()
+
+	# Если (какой - либо текст) работает также со смайликами
+	elif "text" in message:
+	    await message.answer(message.text)
+
+	    # Необязательная загрузка
+	    #await message.text.download()
 
 
 
