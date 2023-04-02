@@ -387,16 +387,15 @@ rus_phone="https://downloader.disk.yandex.ru/preview/51d2f367a1a41aa520cfc049eae
 rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb69b41048387bc2d9c1f9e7cb8c5349d9404ec053/63c1b05b/YgAWFr1vJHk_O_uT15w--aX3ATg9TGRKmTLY0YJUpIRVDHxEdaip2EyFseskn7OsIQ737D4UmDZHbGTolY1g3A%3D%3D?uid=0&filename=rus_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 
 
-# Для всех языков
 # Менюшка команд бота
 async def set_starting_commands(bot: Bot, chat_id: int):
 	return await bot.set_my_commands(
 		commands=[
-		BotCommand("start", "Выбор языка"),
-		BotCommand("help", "Что я могу?"),
-		BotCommand("id", "Узнать свой id"),
-		BotCommand("games", "Узнать какие есть игры"),
-		BotCommand("echo", "Эхо"),
+		BotCommand("start", "Выбор языка"), # /start
+		BotCommand("help", "Что я могу?"), # /help
+		BotCommand("id", "Узнать свой id"), # /id
+		BotCommand("games", "Узнать какие есть игры"), # /games
+		BotCommand("echo", "Эхо"), # /echo
 		],
 		scope=BotCommandScopeChat(chat_id),
 		language_code="ru"
