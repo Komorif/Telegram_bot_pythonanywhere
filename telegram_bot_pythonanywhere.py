@@ -431,7 +431,7 @@ async def command_games(message: types.Message):
 # /echo
 @dp.message_handler(commands="echo")
 async def command_echo(message: types.Message):
-	await message.answer("Если отправить что-то из этого\n1. Смайлик\n2. Эмоджи\n3. Gif\n4. Видео\n4. Фото\n\nБот отправит вам его в ответ")
+	await message.answer("Если отправить что-то из этого списка\n1. Смайлик\n2. Эмоджи\n3. Gif\n4. Видео\n4. Фото\n5. Голосовое сообщение\n\nБот отправит вам его в ответ")
 
 
 # 1.2 меню выбор языка
@@ -477,7 +477,8 @@ async def lang_rus_back(call: types.CallbackQuery):
 @dp.message_handler(content_types=[
 	types.ContentType.DOCUMENT, types.ContentType.PHOTO,
 	types.ContentType.STICKER, types.ContentType.VIDEO,
-	types.ContentType.TEXT,  types.ContentType.ANIMATION
+	types.ContentType.TEXT,  types.ContentType.ANIMATION,
+	types.ContentType.VOICE
 ])
 async def download_doc(message: types.Message):
     # Если (документ) работает также с gif
@@ -512,8 +513,12 @@ async def download_doc(message: types.Message):
 	elif "text" in message:
 	    await message.answer(message.text)
 
+	# Если (голосовое сообщение)
+	elif "voice" in message:
+	    await message.answer_voice(message.voice.file_id)
+
 	    # Необязательная загрузка
-	    #await message.text.download()
+	    #await message.voice.download()
 
 
 
