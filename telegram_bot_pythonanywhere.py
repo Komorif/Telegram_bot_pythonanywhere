@@ -10,6 +10,9 @@ import os
 
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton, callback_query
 
+# Объекты для команд бота
+from aiogram.types import BotCommand, BotCommandScopeChat
+
 
 TOKEN = "your token"
 logging.basicConfig(level=logging.INFO)
@@ -23,8 +26,13 @@ bot = Bot(token=TOKEN, proxy=proxy_url)
 dp = Dispatcher(bot)
 
 
-async def on_startup(_):
-	print("Бот начал работу")
+# Функция (запуск бота)
+async def on_startup(dp):
+	await bot.send_message(1727165738, "Я запустился")
+
+# Функция (выключение бота)
+async def on_shutdown(dp):
+	await bot.send_message(1727165738, "Я завершил работу")
 
 
 # Клавиатура номер 1 (выбором языка)
@@ -379,10 +387,52 @@ rus_phone="https://downloader.disk.yandex.ru/preview/51d2f367a1a41aa520cfc049eae
 rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb69b41048387bc2d9c1f9e7cb8c5349d9404ec053/63c1b05b/YgAWFr1vJHk_O_uT15w--aX3ATg9TGRKmTLY0YJUpIRVDHxEdaip2EyFseskn7OsIQ737D4UmDZHbGTolY1g3A%3D%3D?uid=0&filename=rus_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 
 
+# Для всех языков
+# Менюшка команд бота
+async def set_starting_commands(bot: Bot, chat_id: int):
+	return await bot.set_my_commands(
+		commands=[
+		BotCommand("start", "Выбор языка"),
+		BotCommand("help", "Что я могу?"),
+		BotCommand("id", "Узнать свой id"),
+		BotCommand("games", "Узнать какие есть игры"),
+		BotCommand("echo", "Эхо"),
+		],
+		scope=BotCommandScopeChat(chat_id),
+		language_code="ru"
+	)
+
+
+# /start
 # 1 меню выбор языка
-@dp.message_handler(commands=["start"])
+@dp.message_handler(commands="start")
 async def command_start(message: types.Message):
     await bot.send_photo(message.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
+    await set_starting_commands(bot, message.from_user.id)
+
+
+# /help
+@dp.message_handler(commands="help")
+async def command_help(message: types.Message):
+	await message.answer("You can use me for download games, see our Youtube, Discord etc. / Вы можете использовать меня для загрузки игр, посмотреть наш Youtube, Discord и т.д.😲")
+
+
+# /id
+@dp.message_handler(commands="id")
+async def command_id(message: types.Message):
+	await message.answer(f"Ваш id: {message.from_user.id}")
+
+
+# /games
+@dp.message_handler(commands="games")
+async def command_games(message: types.Message):
+	await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Horror\n2. ES MOD\n\nWEB GAMES\nNot yet/пока нет")
+
+
+# /echo
+@dp.message_handler(commands="echo")
+async def command_echo(message: types.Message):
+	await message.answer("Если отправить что-то из этого\n1. Смайлик\n2. Эмоджи\n3. Gif\n4. Видео\n4. Фото\n\nБот отправит вам его в ответ")
 
 
 # 1.2 меню выбор языка
@@ -611,4 +661,4 @@ def register_handlers_client(dp : Dispatcher):
   dp.register_message_handler(command_start, commands=["start"])
 
 if __name__ == "__main__":
-	executor.start_polling(dp)
+	executor.start_polling(dp, on_startup=on_startup, on_shutdown=on_shutdown)
