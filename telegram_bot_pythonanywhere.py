@@ -389,17 +389,28 @@ rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb6
 
 # Менюшка команд бота
 async def set_starting_commands(bot: Bot, chat_id: int):
-	return await bot.set_my_commands(
-		commands=[
-		BotCommand("start", "Выбор языка"), # /start
-		BotCommand("help", "Что я могу?"), # /help
-		BotCommand("id", "Узнать свой id"), # /id
-		BotCommand("games", "Узнать какие есть игры"), # /games
-		BotCommand("echo", "Эхо"), # /echo
+    STARTING_COMMANDS = {
+		"ru": [
+			BotCommand("start", "Команда start запускает бота, начать сначала"), # /start
+			BotCommand("help", "Вывести информацию по боту"), # /help
+			BotCommand("id", "Узнать свой id"), # /id
+			BotCommand("echo", "Эхо"), # /echo
+			BotCommand("games", "Узнать какие есть игры"), # /games
 		],
-		scope=BotCommandScopeChat(chat_id),
-		language_code="ru"
-	)
+		"en": [
+			BotCommand("start", "Restart bot"), # /start
+			BotCommand("help", "Info about bot"), # /help
+			BotCommand("id", "Find your id"), # /id
+			BotCommand("echo", "Echo"), # /echo
+			BotCommand("games", "Find out what games are available"), # /games
+		]
+	}
+    for language, commands in STARTING_COMMANDS.items():
+	    await bot.set_my_commands(
+		    commands=commands,
+		    scope=BotCommandScopeChat(chat_id),
+		    language_code=language
+		)
 
 
 # /start
@@ -413,25 +424,43 @@ async def command_start(message: types.Message):
 # /help
 @dp.message_handler(commands="help")
 async def command_help(message: types.Message):
-	await message.answer("You can use me for download games, see our Youtube, Discord etc. / Вы можете использовать меня для загрузки игр, посмотреть наш Youtube, Discord и т.д.😲")
+    if message.from_user.language_code == "ru":
+	    await message.answer("Вы можете использовать меня для загрузки игр, посмотреть наш Youtube, Discord и т.д.😲")
+
+    elif message.from_user.language_code == "en":
+	    await message.answer("You can use me for download games, see our Youtube, Discord etc.😲")
 
 
 # /id
 @dp.message_handler(commands="id")
 async def command_id(message: types.Message):
-	await message.answer(f"Ваш id: {message.from_user.id}")
+    if message.from_user.language_code == "ru":
+        await message.answer(f"Ваш id: {message.from_user.id}")
 
-
-# /games
-@dp.message_handler(commands="games")
-async def command_games(message: types.Message):
-	await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Horror\n2. ES MOD\n\nWEB GAMES\nNot yet/пока нет")
+    elif message.from_user.language_code == "en":
+	    await message.answer(f"Your id: {message.from_user.id}")
 
 
 # /echo
 @dp.message_handler(commands="echo")
 async def command_echo(message: types.Message):
-	await message.answer("Если отправить что-то из этого списка\n1. Смайлик\n2. Эмоджи\n3. Gif\n4. Видео\n4. Фото\n5. Голосовое сообщение\n\nБот отправит вам его в ответ")
+    if message.from_user.language_code == "ru":
+        await message.answer("Если отправить что-то из этого списка\n1. Смайлик\n2. Эмоджи\n3. Gif\n4. Видео\n4. Фото\n5. Голосовое сообщение\n\nБот отправит вам его в ответ")
+
+    elif message.from_user.language_code == "en":
+        await message.answer("If you send something from this list\n1. Smiley face\n2. Emoji\n3. Gif\n4. Video\n4. Picture\n5. Voice message\n\nBot will send it back to you")
+
+
+
+# /games
+@dp.message_handler(commands="games")
+async def command_games(message: types.Message):
+    if message.from_user.language_code == "ru":
+        await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Horror\n2. ES MOD\n\nWEB GAMES\nПока нет")
+
+    elif message.from_user.language_code == "en":
+        await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Horror\n2. ES MOD\n\nWEB GAMES\nNot yet")
+
 
 
 # 1.2 меню выбор языка
