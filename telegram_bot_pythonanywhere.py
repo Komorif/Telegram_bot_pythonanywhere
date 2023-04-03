@@ -451,7 +451,6 @@ async def command_echo(message: types.Message):
         await message.answer("If you send something from this list\n1. Smiley face\n2. Emoji\n3. Gif\n4. Video\n4. Picture\n5. Voice message\n\nBot will send it back to you")
 
 
-
 # /games
 @dp.message_handler(commands="games")
 async def command_games(message: types.Message):
