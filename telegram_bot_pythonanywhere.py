@@ -13,8 +13,10 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeybo
 # Объекты для команд бота
 from aiogram.types import BotCommand, BotCommandScopeChat
 
+from aiogram.types import InputMediaPhoto
 
-TOKEN = "your token"
+
+TOKEN = "5989508618:AAEvFe652Jk836TpS14p9JP4raf0BuapRdo"    
 logging.basicConfig(level=logging.INFO)
 
 
@@ -28,17 +30,17 @@ dp = Dispatcher(bot)
 
 # Функция (запуск бота)
 async def on_startup(dp):
-	await bot.send_message(your id, "Я запустился")
+	await bot.send_message(1727165738, "Я запустился")
 
 # Функция (выключение бота)
 async def on_shutdown(dp):
-	await bot.send_message(your id, "Я завершил работу")
+	await bot.send_message(1727165738, "Я завершил работу")
 
 
 # Клавиатура номер 1 (выбором языка)
 mainMenu_en_rus = InlineKeyboardMarkup(row_width=2)
-lang_rus = InlineKeyboardButton(text="Russian 🇷🇺", callback_data="lang_rus")
 lang_en = InlineKeyboardButton(text="English 🇺🇸", callback_data="lang_en")
+lang_rus = InlineKeyboardButton(text="Russian 🇷🇺", callback_data="lang_rus")
 
 # Добавляем кнопки для клавиатуры c выбором языка
 mainMenu_en_rus.add(lang_en).add(lang_rus)
@@ -52,6 +54,7 @@ lang_en_two = InlineKeyboardButton(text="English 🇺🇸", callback_data="lang_
 # Добавляем кнопки для клавиатуры c выбором языка
 mainMenu_en_rus_two.add(lang_en_two)
 mainMenu_en_rus_two.add(lang_rus_two)
+
 
 
 
@@ -96,8 +99,8 @@ en_in_ios.add(en_back_ios)
 # Клавиатура номер 4 (android)
 en_in_android = InlineKeyboardMarkup(row_width=2)
 en_in_google_play = InlineKeyboardButton(text="GOOGLE PLAY 👾", callback_data="en_in_google_play")
-en_in_cars_two = InlineKeyboardButton(text="Cars 🚗", url="https://disk.yandex.ru/d/VEy132RmANfIMA", callback_data="en_in_cars_two")
-en_in_mosaic = InlineKeyboardButton(text="Mosaic 🧠",url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g", callback_data="en_in_mosaic")
+en_in_cars_two = InlineKeyboardButton(text="Cars 🚗", callback_data="en_in_cars_two")
+en_in_mosaic = InlineKeyboardButton(text="Mosaic 🧠", callback_data="en_in_mosaic")
 en_back_android = InlineKeyboardButton(text="Back", callback_data="en_back_android")
 
 # Добавляем кнопки для клавиатуры номер 4 (android)
@@ -108,12 +111,12 @@ en_in_android.add(en_back_android)
 
 # Клавиатура номер 5 (pc)
 en_in_pc = InlineKeyboardMarkup(row_width=2)
+en_in_pc_calculator = InlineKeyboardButton(text="Calculator C#", callback_data="en_in_pc_calculator")
 en_in_mod_bl = InlineKeyboardButton(text="ES MOD 🧚‍♂️", callback_data="en_in_mod_bl")
-en_in_horror = InlineKeyboardButton(text="Horror 🧟‍♂️", url="https://disk.yandex.ru/d/nzt0GC6gXpJ83w", callback_data="en_in_horror")
 en_back_pc = InlineKeyboardButton(text="Back", callback_data="en_back_pc")
 
 # Добавляем кнопки для клавиатуры номер 5 (pc)
-en_in_pc.add(en_in_mod_bl, en_in_horror)
+en_in_pc.add(en_in_mod_bl, en_in_pc_calculator)
 en_in_pc.add(en_back_pc)
 
 
@@ -152,17 +155,7 @@ en_back_in_google_play = InlineKeyboardButton(text="Back", callback_data="en_bac
 en_in_google_play.add(en_back_in_google_play)
 
 
-# Клавиатура номер 10 (Мод БЛ)
-en_in_mod_bl = InlineKeyboardMarkup(row_width=2)
-en_in_mod_bl_downl = InlineKeyboardButton(text="Download our mod for the game ES 🧚‍♂️", url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA", callback_data="en_in_mod_bl_downl")
-en_back_mod = InlineKeyboardButton(text="Back", callback_data="en_back_mod")
-
-# Добавляем кнопки для клавиатуры номер 10 (Мод БЛ)
-en_in_mod_bl.add(en_in_mod_bl_downl)
-en_in_mod_bl.add(en_back_mod)
-
-
-# Клавиатура номер 11 (социальные сети)
+# Клавиатура номер 10 (социальные сети)
 en_in_social_network = InlineKeyboardMarkup(row_width=2)
 en_in_youtube_one = InlineKeyboardButton(text="YOUTUBE 1 📺", url="https://www.youtube.com/channel/UC9EJAIYe4sL0iGB_huHTqHw", callback_data="en_in_youtube_one")
 en_in_youtube_two = InlineKeyboardButton(text="YOUTUBE 2 📺", url="https://www.youtube.com/channel/UCb2GlPOgqB_VpWTvQM_dzKg", callback_data="en_in_youtube_two")
@@ -172,38 +165,84 @@ en_in_github = InlineKeyboardButton(text="GITHUB 💣", url="https://github.com/
 en_in_vk = InlineKeyboardButton(text="VK ✔️", url="https://vk.com/komorilfg", callback_data="en_in_vk")
 en_back_social = InlineKeyboardButton(text="Back", callback_data="en_back_social")
 
-# Добавляем кнопки для клавиатуры номер 11 (социальные сети)
+# Добавляем кнопки для клавиатуры номер 10 (социальные сети)
 en_in_social_network.add(en_in_youtube_one, en_in_youtube_two).add(en_in_twitch, en_in_discord)
 en_in_social_network.add(en_in_github, en_in_vk)
 en_in_social_network.add(en_back_social)
 
 
-# Клавиатура номер 12 (FAQ)
+# Клавиатура номер 11 (FAQ)
 en_in_FAQ = InlineKeyboardMarkup(row_width=2)
 en_in_FAQ_ds = InlineKeyboardButton(text="Here ⬆", url = "https://1drv.ms/w/s!AtF4vCOqewgBoCr1uMzSn-xf_3fV?e=rmxrjf", callback_data="en_in_FAQ_ds")
 en_back_faq = InlineKeyboardButton(text="Back", callback_data="en_back_faq")
 
-# Добавляем кнопки для клавиатуры номер 12 (FAQ)
+# Добавляем кнопки для клавиатуры номер 11 (FAQ)
 en_in_FAQ.add(en_in_FAQ_ds)
 en_in_FAQ.add(en_back_faq)
 
 
-# Клавиатура номер 13 (Профиль)
+# Клавиатура номер 12 (Профиль)
 en_in_Profile = InlineKeyboardMarkup(row_width=2)
 en_back_prof = InlineKeyboardButton(text="Back", callback_data="en_back_prof")
 
-# Добавляем кнопки для клавиатуры номер 13 (Профиль)
+# Добавляем кнопки для клавиатуры номер 12 (Профиль)
 en_in_Profile.add(en_back_prof)
 
 
-# Клавиатура номер 14 (Пожертвования)
+# Клавиатура номер 13 (Пожертвования)
 en_in_donation = InlineKeyboardMarkup(row_width=2)
 en_in_donation_in = InlineKeyboardButton(text="Donation 💰", url="https://www.donationalerts.com/r/fetchy74", callback_data="en_in_donation_in")
 en_back_donat = InlineKeyboardButton(text="Back", callback_data="en_back_donat")
 
-# Добавляем кнопки для клавиатуры 14 (Пожертвования)
+# Добавляем кнопки для клавиатуры 13 (Пожертвования)
 en_in_donation.add(en_in_donation_in)
 en_in_donation.add(en_back_donat)
+
+
+
+# PC
+# Клавиатура номер 1.1 (Мод БЛ)
+en_in_mod_bl = InlineKeyboardMarkup(row_width=2)
+en_in_mod_bl_button_download = InlineKeyboardButton(text="Download mod for the game ES 🧚‍♂️", url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA", callback_data="en_in_mod_bl_downl")
+en_back_mod = InlineKeyboardButton(text="Back", callback_data="en_back_mod")
+
+# Добавляем кнопки для клавиатуры номер 1.1 (Мод БЛ)
+en_in_mod_bl.add(en_in_mod_bl_button_download)
+en_in_mod_bl.add(en_back_mod)
+
+
+# Клавиатура 1.2 (Карточка Калькулятор)
+en_in_pc_calculator = InlineKeyboardMarkup(row_width=2)
+en_in_pc_calculator_button_download = InlineKeyboardButton(text="Download", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",callback_data="en_in_pc_calculator_button_download")
+en_back_in_pc_calculator = InlineKeyboardButton(text="Back", callback_data="en_back_in_pc_calculator")
+
+# Добавляем кнопки для клавиатуры номер 1.2 (Карточка Калькулятор)
+en_in_pc_calculator.add(en_in_pc_calculator_button_download)
+en_in_pc_calculator.add(en_back_in_pc_calculator)
+
+
+
+# Android
+# Клавиатура номер 1.1 (Машины)
+en_in_cars_two = InlineKeyboardMarkup(row_width=2)
+en_in_android_cars_two_button_download = InlineKeyboardButton(text="Download", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",callback_data="en_in_android_cars_two_button_download")
+en_back_in_cars_two = InlineKeyboardButton(text="Back", callback_data="en_back_in_cars_two")
+
+# Добавляем кнопки для клавиатуры номер 1.1 (Машины)
+en_in_cars_two.add(en_in_android_cars_two_button_download)
+en_in_cars_two.add(en_back_in_cars_two)
+
+
+
+# Клавиатура номер 1.2 (Мозаика)
+en_in_mosaic = InlineKeyboardMarkup(row_width=2)
+en_in_android_mosaic_button_download = InlineKeyboardButton(text="Download", url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g",callback_data="en_in_android_mosaic_button_download")
+en_back_in_mosaic = InlineKeyboardButton(text="Back", callback_data="en_back_in_mosaic")
+
+# Добавляем кнопки для клавиатуры номер 1.2 (Мозаика)
+en_in_mosaic.add(en_in_android_mosaic_button_download)
+en_in_mosaic.add(en_back_in_mosaic)
+
 
 
 
@@ -249,8 +288,8 @@ rus_in_ios.add(rus_back_ios)
 # Клавиатура номер 4 (android)
 rus_in_android = InlineKeyboardMarkup(row_width=2)
 rus_in_google_play = InlineKeyboardButton(text="GOOGLE PLAY 👾", callback_data="rus_in_google_play")
-rus_in_cars_two = InlineKeyboardButton(text="Cars 🚗", url="https://disk.yandex.ru/d/VEy132RmANfIMA", callback_data="rus_in_cars_two")
-rus_in_mosaic = InlineKeyboardButton(text="Mosaic 🧠",url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g", callback_data="rus_in_mosaic")
+rus_in_cars_two = InlineKeyboardButton(text="Cars 🚗", callback_data="rus_in_cars_two")
+rus_in_mosaic = InlineKeyboardButton(text="Mosaic 🧠", callback_data="rus_in_mosaic")
 rus_back_android = InlineKeyboardButton(text="Назад", callback_data="rus_back_android")
 
 # Добавляем кнопки для клавиатуры номер 4 (android)
@@ -261,12 +300,12 @@ rus_in_android.add(rus_back_android)
 
 # Клавиатура номер 5 (pc)
 rus_in_pc = InlineKeyboardMarkup(row_width=2)
+rus_in_pc_calculator = InlineKeyboardButton(text="Калькулятор C#", callback_data="rus_in_pc_calculator")
 rus_in_mod_bl = InlineKeyboardButton(text="МОД БЛ 🧚‍♂️", callback_data="rus_in_mod_bl")
-rus_in_horror = InlineKeyboardButton(text="Horror 🧟‍♂️", url="https://disk.yandex.ru/d/nzt0GC6gXpJ83w", callback_data="rus_in_horror")
 rus_back_pc = InlineKeyboardButton(text="Назад", callback_data="rus_back_pc")
 
 # Добавляем кнопки для клавиатуры номер 5 (pc)
-rus_in_pc.add(rus_in_mod_bl, rus_in_horror)
+rus_in_pc.add(rus_in_mod_bl, rus_in_pc_calculator)
 rus_in_pc.add(rus_back_pc)
 
 
@@ -305,17 +344,7 @@ rus_back_in_google_play = InlineKeyboardButton(text="Back", callback_data="rus_b
 rus_in_google_play.add(rus_back_in_google_play)
 
 
-# Клавиатура номер 10 (Мод БЛ)
-rus_in_mod_bl = InlineKeyboardMarkup(row_width=2)
-rus_in_mod_bl_downl = InlineKeyboardButton(text="Скачать наш мод для игры БЛ 🧚‍♂️", url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA", callback_data="rus_in_mod_bl_downl")
-rus_back_mod = InlineKeyboardButton(text="Назад", callback_data="rus_back_mod")
-
-# Добавляем кнопки для клавиатуры номер 10 (Мод БЛ)
-rus_in_mod_bl.add(rus_in_mod_bl_downl)
-rus_in_mod_bl.add(rus_back_mod)
-
-
-# Клавиатура номер 11 (социальные сети)
+# Клавиатура номер 10 (социальные сети)
 rus_in_social_network = InlineKeyboardMarkup(row_width=2)
 rus_in_youtube_one = InlineKeyboardButton(text="YOUTUBE 1 📺", url="https://www.youtube.com/channel/UC9EJAIYe4sL0iGB_huHTqHw", callback_data="rus_in_youtube_one")
 rus_in_youtube_two = InlineKeyboardButton(text="YOUTUBE 2 📺", url="https://www.youtube.com/channel/UCb2GlPOgqB_VpWTvQM_dzKg", callback_data="rus_in_youtube_two")
@@ -325,45 +354,89 @@ rus_in_github = InlineKeyboardButton(text="GITHUB 💣", url="https://github.com
 rus_in_vk = InlineKeyboardButton(text="VK ✔️", url="https://vk.com/komorilfg", callback_data="rus_in_vk")
 rus_back_social = InlineKeyboardButton(text="Назад", callback_data="rus_back_social")
 
-# Добавляем кнопки для клавиатуры номер 11 (социальные сети)
+# Добавляем кнопки для клавиатуры номер 10 (социальные сети)
 rus_in_social_network.add(rus_in_youtube_one, rus_in_youtube_two).add(rus_in_twitch, rus_in_discord)
 rus_in_social_network.add(rus_in_github, rus_in_vk)
 rus_in_social_network.add(rus_back_social)
 
 
-# Клавиатура номер 12 (FAQ)
+# Клавиатура номер 11 (FAQ)
 rus_in_FAQ = InlineKeyboardMarkup(row_width=2)
 rus_in_FAQ_ds = InlineKeyboardButton(text="Тут ⬆", url = "https://1drv.ms/w/s!AtF4vCOqewgBoB1t_x6DdrpMX1QH?e=wrR0sq", callback_data="rus_in_FAQ_ds")
 rus_back_faq = InlineKeyboardButton(text="Назад", callback_data="rus_back_faq")
 
-# Добавляем кнопки для клавиатуры номер 12 (FAQ)
+# Добавляем кнопки для клавиатуры номер 11 (FAQ)
 rus_in_FAQ.add(rus_in_FAQ_ds)
 rus_in_FAQ.add(rus_back_faq)
 
 
-# Клавиатура номер 13 (Профиль)
+# Клавиатура номер 12 (Профиль)
 rus_in_Profile = InlineKeyboardMarkup(row_width=2)
 rus_back_prof = InlineKeyboardButton(text="Назад", callback_data="rus_back_prof")
 
-# Добавляем кнопки для клавиатуры номер 13 (Профиль)
+# Добавляем кнопки для клавиатуры номер 12 (Профиль)
 rus_in_Profile.add(rus_back_prof)
 
 
-# Клавиатура номер 14 (Пожертвования)
+# Клавиатура номер 13 (Пожертвования)
 rus_in_donation = InlineKeyboardMarkup(row_width=2)
 rus_in_donation_in = InlineKeyboardButton(text="Пожертвование 💰", url="https://www.donationalerts.com/r/fetchy74", callback_data="rus_in_donation_in")
 rus_back_donat = InlineKeyboardButton(text="Назад", callback_data="rus_back_donat")
 
-# Добавляем кнопки для клавиатуры 14 (Пожертвования)
+# Добавляем кнопки для клавиатуры 13 (Пожертвования)
 rus_in_donation.add(rus_in_donation_in)
 rus_in_donation.add(rus_back_donat)
+
+
+
+# PC
+# Клавиатура номер 1.1 (Мод БЛ)
+rus_in_mod_bl = InlineKeyboardMarkup(row_width=2)
+rus_in_mod_bl_button_download = InlineKeyboardButton(text="Скачать мод для игры БЛ 🧚‍♂️", url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA", callback_data="rus_in_mod_bl_button_download")
+rus_back_mod = InlineKeyboardButton(text="Назад", callback_data="rus_back_mod")
+
+# Добавляем кнопки для клавиатуры номер 1.1 (Мод БЛ)
+rus_in_mod_bl.add(rus_in_mod_bl_button_download)
+rus_in_mod_bl.add(rus_back_mod)
+
+
+# Клавиатура 1.2 (Карточка Калькулятор)
+rus_in_pc_calculator = InlineKeyboardMarkup(row_width=2)
+rus_in_pc_calculator_button_download = InlineKeyboardButton(text="Скачать", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",callback_data="rus_in_pc_calculator_button_download")
+rus_back_in_pc_calculator = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_pc_calculator")
+
+# Добавляем кнопки для клавиатуры номер 1.2 (Карточка Калькулятор)
+rus_in_pc_calculator.add(rus_in_pc_calculator_button_download)
+rus_in_pc_calculator.add(rus_back_in_pc_calculator)
+
+
+
+# Android
+# Клавиатура номер 1.1 (Машины)
+rus_in_cars_two = InlineKeyboardMarkup(row_width=2)
+rus_in_android_cars_two_button_download = InlineKeyboardButton(text="Скачать", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",callback_data="rus_in_android_cars_two_button_download")
+rus_back_in_cars_two = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_cars_two")
+
+# Добавляем кнопки для клавиатуры номер 1.1 (Машины)
+rus_in_cars_two.add(rus_in_android_cars_two_button_download)
+rus_in_cars_two.add(rus_back_in_cars_two)
+
+
+# Клавиатура номер 1.2 (Мозаика)
+rus_in_mosaic = InlineKeyboardMarkup(row_width=2)
+rus_in_android_mosaic_button_download = InlineKeyboardButton(text="Скачать", url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g",callback_data="rus_in_android_mosaic_button_download")
+rus_back_in_mosaic = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_mosaic")
+
+# Добавляем кнопки для клавиатуры номер 1.2 (Мозаика)
+rus_in_mosaic.add(rus_in_android_mosaic_button_download)
+rus_in_mosaic.add(rus_back_in_mosaic)
 
 
 
 # Картинки для менюшек
 menu_one="https://downloader.disk.yandex.ru/preview/711bb1adff875b15eb27bc2e953f8d0b36a69eecb3a2ca4648143ee0aa223585/63c1af3e/_6tncDV3aVZTsQg0TZbCornwjRjeQl6Sbl7ryrTKPw9pPdoQLXcQ1r0Yu5Untrt8SGGTmFGHYgs8E_rm6dSkYA%3D%3D?uid=0&filename=menu_one.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 ios="https://downloader.disk.yandex.ru/preview/5b42c746b53921a74847b49334ef13e01f2864a5e758af36484f783248b9f5f8/63c1af84/1iEydv63EpJWU_e7x7LDfqX3ATg9TGRKmTLY0YJUpIRbS974E5ceNrIrAqGV3o-TvDf9AYWnpGhBpJ15kq8vPw%3D%3D?uid=0&filename=ios.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-andoid="https://downloader.disk.yandex.ru/preview/5f590d1bcdda15d56e668bba0c430c5714439e97a3e188401357306c4b101eb2/63c1afb3/lsX9zrLWoYPzhyZU41o5w6X3ATg9TGRKmTLY0YJUpITesx_k25DxwZNvFQTOTgbNV1IjEwIpXQ4ssHZ9Bk8ywg%3D%3D?uid=0&filename=android.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+android="https://downloader.disk.yandex.ru/preview/5f590d1bcdda15d56e668bba0c430c5714439e97a3e188401357306c4b101eb2/63c1afb3/lsX9zrLWoYPzhyZU41o5w6X3ATg9TGRKmTLY0YJUpITesx_k25DxwZNvFQTOTgbNV1IjEwIpXQ4ssHZ9Bk8ywg%3D%3D?uid=0&filename=android.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 pc="https://downloader.disk.yandex.ru/preview/c2f1fbb4c7d3c2a355d7d61785ab22188ea5f22530e92a1f322a740a6501e478/63c1afe4/MNQlWgSL62OIKo3AGtl_v6X3ATg9TGRKmTLY0YJUpIQD6nmvIEl_RH7MzyL3Flp8Iowu8MDThx2y9aZ5ZE9loQ%3D%3D?uid=0&filename=pc.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 google_play="https://downloader.disk.yandex.ru/preview/96cff67912e20350583aa5e39a9bc6a0994ec30ef871a46c4a8444dde4134963/63d53985/lw9UVvCoowbEvBhKKB6sLYaa__hDX-jp_fjofm25VinHzXea_bSmCdK1PkFvjK4JS2ihJDr4UrHs0TjYNz4i8w%3D%3D?uid=0&filename=google_play.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 faq="https://downloader.disk.yandex.ru/preview/87f33def26b09db3e18c3dd2f3137cd3a43a08c83c2f6a02301fbd6035c6615a/63c1b002/cVQro105INirqiPWEro9H6X3ATg9TGRKmTLY0YJUpISHHAmrL6lUr33tyAmW2_qwI3ZwRG3eV-ovVOZmbOYMhg%3D%3D?uid=0&filename=FAQ.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
@@ -382,9 +455,15 @@ rus_menu="https://downloader.disk.yandex.ru/preview/170dd84ecdd0e02a097dcb64a021
 rus_social_network="https://downloader.disk.yandex.ru/preview/5e6eaa54cbd5d273ed746392430ee67368b115b52be709a92067dc7a6881bd80/63c1b04c/0MK89FED-4X2FcfnPeA9y6X3ATg9TGRKmTLY0YJUpITIE_sADpIQGmAA6lNp-D4kDRRADv9EHBTb8y2v7B6Tzw%3D%3D?uid=0&filename=rus_social_network.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 rus_donation="https://downloader.disk.yandex.ru/preview/d27eae5cda0522b720a1374cb15fe70b00866d5002ee80c256100c31b6428754/63c1b024/lCvTYZkOtl_KiCVwROLU4aX3ATg9TGRKmTLY0YJUpIRAZFVTQVGzo0u5ul1B10bh_B9lSwVv1bqwwGwSeWABmw%3D%3D?uid=0&filename=rus_donation.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 rus_mod_bl="https://downloader.disk.yandex.ru/preview/713634f417141a913e250c473364de52fefaf4c71ba50673bb99ea591e76b39b/63c1b013/ekNSf85xrnEWXBFg-lT1z7nwjRjeQl6Sbl7ryrTKPw_oUKVUk4sd2kC9uuhEYadBpyH1tpWLS4Q0Sv775Jf7Aw%3D%3D?uid=0&filename=rus_mod_bl.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
-rus_platform="https://downloader.disk.yandex.ru/preview/06105be0af89d22c9670a08316b4b46e0f481bfe92d4a832d74fc8b9ad89c1a8/63c1b03b/jkk3Y7EBMq8COZs_yYwMI7nwjRjeQl6Sbl7ryrTKPw8rEB7s5cCmyZFg6ntzpGbUWhwhDkefJe83IztboXiOVA%3D%3D?uid=0&filename=rus_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_platform="https://downloader.disk.yandex.ru/preview/e0779c47f7523699a0550b0e831705cc9cd499b05323a175930a608a4b059d3c/64431dd2/Vrk10M4lxUmYpAxy9taM378RG94hQbd9Gv2UXx_WTEckVyY85790xKgkDYejJE6kHQEOr2LtAwefMMR0vek7JQ%3D%3D?uid=0&filename=rus_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 rus_phone="https://downloader.disk.yandex.ru/preview/51d2f367a1a41aa520cfc049eaec03d0d4c4212156a41f1daf28efa75fec1507/63d42ae4/IasrU8Hu2XzBVjdC6D6qZFBavCHoxKachbVWEqGMJmwxvAxbP3osMcrGPezZc3VuXhMOHAM2IACzYjAhChesVw%3D%3D?uid=0&filename=%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb69b41048387bc2d9c1f9e7cb8c5349d9404ec053/63c1b05b/YgAWFr1vJHk_O_uT15w--aX3ATg9TGRKmTLY0YJUpIRVDHxEdaip2EyFseskn7OsIQ737D4UmDZHbGTolY1g3A%3D%3D?uid=0&filename=rus_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+
+# Картинки для баннеров игры
+calculator_card = "https://downloader.disk.yandex.ru/preview/248584608d648df0d7d34d965eec779a8fbfd06e27ebe4fa3b183f750f77209d/644320b0/FSvNuN28p3ulGk-xcnTfKmRDTHquQMBdtdnjfjgvFfrt2JvOCZUwnKFsVhQNoXCzrf3KveM-3uN-InNkW5BuNw%3D%3D?uid=0&filename=calculator.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+endless_summer_card = "https://downloader.disk.yandex.ru/preview/c770decdf1a98e584fe94fbd40b597ef89990ebc6cd2fe1f802167eee08b37b6/64432857/CBxM-YisCnJlR74orLAowZfnTKFlkYr3bagiK8noXhjh8-PAXSjcLunb1haH48f9Vrqty3rRuC62549cqEXqXw%3D%3D?uid=0&filename=Everlasting_Summer_NdNfec8MxX.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048"
+cars_card = "https://downloader.disk.yandex.ru/preview/6606a14178f014918a4ea43977be328de17d9bf02d03790703dc185a1eb8307e/64432fd3/aG7xacNyFljOd_1gt2TP_H0z5pF4H_j88sf3649jAzy1QEw3BBqVF6UGMyh16yATbbsYpFaS8BZHafF9l2Ay5w%3D%3D?uid=0&filename=cars.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+mosaic_card = "https://downloader.disk.yandex.ru/preview/c671dec34ff65ef0c253545b682b351c71c47fe57ddc41fce90de70d343f381a/644330ed/XxOy4RGwmFLuyf83Ej6A5cGD5lx9DMHYfDyJ0VrtMkTouTdTjApFxDF2y-dgQyLozwrIIsA6h-u1WxikiysUgg%3D%3D?uid=0&filename=mosaic.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 
 
 # Менюшка команд бота
@@ -413,12 +492,14 @@ async def set_starting_commands(bot: Bot, chat_id: int):
 		)
 
 
+
 # /start
 # 1 меню выбор языка
 @dp.message_handler(commands="start")
 async def command_start(message: types.Message):
     await bot.send_photo(message.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
     await set_starting_commands(bot, message.from_user.id)
+    
 
 
 # /help
@@ -455,50 +536,497 @@ async def command_echo(message: types.Message):
 @dp.message_handler(commands="games")
 async def command_games(message: types.Message):
     if message.from_user.language_code == "ru":
-        await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Horror\n2. ES MOD\n\nWEB GAMES\nПока нет")
+        await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Calculator\n2. ES MOD\n\nWEB GAMES\nПока нет")
 
     elif message.from_user.language_code == "en":
-        await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Horror\n2. ES MOD\n\nWEB GAMES\nNot yet")
+        await message.answer("ANDROID\n1. Cars\n2. Mosaic\n\nPC\n1. Calculator\n2. ES MOD\n\nWEB GAMES\nNot yet")
 
 
 
-# 1.2 меню выбор языка
+# Функция для редактирования инлайн клавиатур
+async def edit_message(call: types.CallbackQuery, photo,
+                       kb: InlineKeyboardMarkup, caption: str):
+
+	image = InputMediaPhoto(photo)
+
+	await call.message.edit_media(media=image)
+
+	await call.message.edit_caption(caption)
+	await call.message.edit_reply_markup(reply_markup=kb)
+
+
+
+# /start
+# 1 меню выбор языка
 @dp.callback_query_handler(text_contains="start")
-async def mainMenu_en_rus_two(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
+async def mainMenu_en_rus_two(callback_query: types.CallbackQuery):
 
-    if call.data == "mainMenu_en_rus_two":
-        await bot.send_message(call.from_user.id, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
+	image = menu_one
+
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	if callback_query == "mainMenu_en_rus":
+		await edit_message(callback_query, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
 
 
 # Итерация с кнопок English и Russian на их менюшки
 @dp.callback_query_handler(text_contains="lang_")
-async def lang_all(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
+async def lang_all(callback_query: types.CallbackQuery):
 
-    if call.data == "lang_en":
-        await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	if callback_query.data == "lang_en":
 
-    elif call.data == "lang_rus":
-        await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
+		image = en_menu
+
+		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif callback_query.data == "lang_rus":
+
+		image = rus_menu
+
+		await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
 
 
 # Отдельный back с mainmenu на выбор языков en
 @dp.callback_query_handler(text_contains="en_back_mainMenu")
-async def lang_en_back(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
+async def lang_en_back(callback_query: types.CallbackQuery):
 
-    if call.data == "en_back_mainMenu":
-        await bot.send_photo(call.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
+	image = menu_one
+
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	if callback_query.data == "en_back_mainMenu":
+		await edit_message(callback_query, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
 
 
 # Отдельный back с mainmenu на выбор языков rus
 @dp.callback_query_handler(text_contains="rus_back_mainMenu")
-async def lang_rus_back(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
+async def lang_rus_back(callback_query: types.CallbackQuery):
 
-    if call.data == "rus_back_mainMenu":
-        await bot.send_photo(call.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
+	image = menu_one
+
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	if callback_query.data == "rus_back_mainMenu":
+		await edit_message(callback_query, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
+
+
+
+# English
+# Отдельный back с mainmenu на выбор языков rus
+@dp.callback_query_handler(text_contains="en_back_")
+async def back_buttons_en(callback_query: types.CallbackQuery):
+
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	# Условия для всех назад кнопок назад (English)
+	if callback_query.data == "en_back_games":
+
+		image = en_menu
+
+		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif callback_query.data == "en_back_ios":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+
+
+	elif callback_query.data == "en_back_android":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+
+	elif callback_query.data == "en_back_pc":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+
+	elif callback_query.data == "en_back_in_web_games":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+
+	elif callback_query.data == "en_back_in_pc_web_games":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+
+	elif callback_query.data == "en_back_in_phone_web_games":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+
+	elif callback_query.data == "en_back_in_google_play":
+
+		image = android
+
+		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+
+	elif callback_query.data == "en_back_mod":
+
+		image = en_platform
+
+		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_pc)
+
+	elif callback_query.data == "en_back_social":
+
+		image = en_menu
+
+		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif callback_query.data == "en_back_faq":
+
+		image = en_menu
+
+		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif callback_query.data == "en_back_prof":
+
+		image = en_menu
+
+		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif callback_query.data == "en_back_donat":
+
+		image = en_menu
+
+		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif callback_query.data == "en_back_in_pc_calculator":
+
+		image = pc
+
+		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_pc)
+
+	elif callback_query.data == "en_back_in_cars_two":
+
+		image = android
+
+		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+
+	elif callback_query.data == "en_back_in_mosaic":
+
+		image = android
+
+		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+
+
+
+
+# Все inline клавиатуры inline en_in_ перед каждой English
+@dp.callback_query_handler(text_contains="en_in_")
+async def it_buttons_en(callback_query: types.CallbackQuery):
+
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	# Условия для всех назад кнопок rus_in_ (English)
+    if callback_query.data == "en_in_our_games":
+
+    	image = en_platform
+
+    	await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+
+    elif callback_query.data == "en_in_ios":
+
+    	image = ios
+
+    	await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_ios)
+
+    elif callback_query.data == "en_in_android":
+
+    	image = android
+
+    	await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+
+    elif callback_query.data == "en_in_pc":
+
+    	image = pc
+
+    	await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_pc)
+
+    elif callback_query.data == "en_in_web_games":
+
+    	image = en_platform
+
+    	await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+
+    elif callback_query.data == "en_in_pc_web_games":
+
+    	image = pc
+
+    	await edit_message(callback_query, photo=image, caption="Pick any game you want 🇺🇸", kb=en_in_pc_web_games)
+
+    elif callback_query.data == "en_in_phone_web_games":
+
+    	image = en_phone
+
+    	await edit_message(callback_query, photo=image, caption="Pick any game you want 🇺🇸", kb=en_in_phone_web_games)
+
+    elif callback_query.data == "en_in_mod_bl":
+
+    	image = endless_summer_card
+
+    	await edit_message(callback_query, photo=image, caption="MOD FOR ENDLESS SUMMER 🇺🇸", kb=en_in_mod_bl)
+
+    elif callback_query.data == "en_in_google_play":
+
+    	image = google_play
+
+    	await edit_message(callback_query, photo=image, caption="GOOGLE PLAY 🇺🇸", kb=en_in_google_play)
+
+    elif callback_query.data == "en_in_social_network":
+
+    	image = en_social_network
+
+    	await edit_message(callback_query, photo=image, caption="SOCIAL MEDIA 🇺🇸", kb=en_in_social_network)
+
+    elif callback_query.data == "en_in_FAQ":
+
+    	image = faq
+
+    	await edit_message(callback_query, photo=image, caption="We have answered frequently asked questions for your convenience 🇺🇸", kb=en_in_FAQ)
+
+    elif callback_query.data == "en_in_Profile":
+
+    	image = en_profile
+
+    	await edit_message(callback_query, photo=image, caption="You are a human being. \nGood luck using the bot 🇺🇸", kb=en_in_Profile)
+
+    elif callback_query.data == "en_in_donation":
+
+    	image = en_donation
+
+    	await edit_message(callback_query, photo=image, caption="You can help us be better 🇺🇸", kb=en_in_donation)
+
+    elif callback_query.data == "en_in_pc_calculator":
+
+    	image = calculator_card
+
+    	await edit_message(callback_query, photo=image, caption="This application was created ONLY for Windows.\nWith this calculator you can perform simple operations such as addition, division, subtraction, etc.", kb=en_in_pc_calculator)
+
+    elif callback_query.data == "en_in_cars_two":
+
+    	image = cars_card
+
+    	await edit_message(callback_query, photo=image, caption="Download the game cars two", kb=en_in_cars_two)
+
+    elif callback_query.data == "en_in_mosaic":
+
+    	image = mosaic_card
+
+    	await edit_message(callback_query, photo=image, caption="Download the game Mosaic", kb=en_in_mosaic)
+
+
+
+# Russian
+@dp.callback_query_handler(text_contains="rus_back_")
+async def back_buttons_rus(callback_query: types.CallbackQuery):
+   
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	# Условия для всех назад кнопок назад (Russian)
+    if callback_query.data == "rus_back_games":
+
+    	image = rus_menu
+
+    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif callback_query.data == "rus_back_ios":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+
+    elif callback_query.data == "rus_back_android":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+
+    elif callback_query.data == "rus_back_pc":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+
+    elif callback_query.data == "rus_back_in_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+
+    elif callback_query.data == "rus_back_in_pc_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+
+    elif callback_query.data == "rus_back_in_phone_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+
+    elif callback_query.data == "rus_back_in_google_play":
+
+    	image = android
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+
+    elif callback_query.data == "rus_back_mod":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_pc)
+
+    elif callback_query.data == "rus_back_social":
+
+    	image = rus_menu
+
+    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif callback_query.data == "rus_back_faq":
+
+    	image = rus_menu
+
+    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif callback_query.data == "rus_back_prof":
+
+    	image = rus_menu
+
+    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif callback_query.data == "rus_back_donat":
+
+    	image = rus_menu
+
+    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif callback_query.data == "rus_back_in_pc_calculator":
+
+    	image = pc
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_pc)
+
+    elif callback_query.data == "rus_back_in_cars_two":
+
+    	image = android
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+
+    elif callback_query.data == "rus_back_in_mosaic":
+
+    	image = android
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+
+
+
+# Все inline клавиатуры inline en_in_ перед каждой English
+@dp.callback_query_handler(text_contains="rus_in_")
+async def it_buttons_rus(callback_query: types.CallbackQuery):
+    
+	# Редактируем сообщение, заменяя старую фотографию на новую
+	# Условия для всех назад кнопок rus_in_ (Russian)
+    if callback_query.data == "rus_in_our_games":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+
+    elif callback_query.data == "rus_in_ios":
+
+    	image = ios
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_ios)
+
+    elif callback_query.data == "rus_in_android":
+
+    	image = android
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+
+    elif callback_query.data == "rus_in_pc":
+
+    	image = pc
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_pc)
+
+    elif callback_query.data == "rus_in_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(callback_query, photo=image, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+
+    elif callback_query.data == "rus_in_pc_web_games":
+
+    	image = pc
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь 🇷🇺", kb=rus_in_pc_web_games)
+
+    elif callback_query.data == "rus_in_phone_web_games":
+
+    	image = rus_phone
+
+    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь 🇷🇺", kb=rus_in_phone_web_games)
+
+    elif callback_query.data == "rus_in_mod_bl":
+
+    	image = endless_summer_card
+
+    	await edit_message(callback_query, photo=image, caption="МОД НА БЕСКНОНЕЧНОГО ЛЕТО 🇷🇺", kb=rus_in_mod_bl)
+
+    elif callback_query.data == "rus_in_google_play":
+
+    	image = google_play
+
+    	await edit_message(callback_query, photo=image, caption="GOOGLE PLAY 🇷🇺", kb=rus_in_google_play)
+
+    elif callback_query.data == "rus_in_social_network":
+
+    	image = rus_social_network
+
+    	await edit_message(callback_query, photo=image, caption="СОЦИАЛЬНЫЕ СЕТИ 🇷🇺", kb=rus_in_social_network)
+
+    elif callback_query.data == "rus_in_FAQ":
+
+    	image = faq
+
+    	await edit_message(callback_query, photo=image, caption="Мы ответили на часто задаваемые вопросы для вашего удобства 🇷🇺", kb=rus_in_FAQ)
+
+    elif callback_query.data == "rus_in_Profile":
+
+    	image = rus_profile
+
+    	await edit_message(callback_query, photo=image, caption="Вы человек \nЖелаем удачи в пользовании ботом 🇷🇺", kb=rus_in_Profile)
+
+    elif callback_query.data == "rus_in_donation":
+
+    	image = rus_donation
+
+    	await edit_message(callback_query, photo=image, caption="Вы можете помочь нам стать лучше 🇷🇺", kb=rus_in_donation)
+
+    elif callback_query.data == "rus_in_pc_calculator":
+
+    	image = calculator_card
+
+    	await edit_message(callback_query, photo=image, caption="Это приложение было создано ТОЛЬКО для Windows.\nС помощью этого калькулятора вы можете выполнять простые операции, такие как сложение, деление, вычитание и т.д.", kb=rus_in_pc_calculator)
+
+    elif callback_query.data == "rus_in_cars_two":
+
+    	image = cars_card
+
+    	await edit_message(callback_query, photo=image, caption="Скачать игру Cars two", kb=rus_in_cars_two)
+
+    elif callback_query.data == "rus_in_mosaic":
+
+    	image = mosaic_card
+
+    	await edit_message(callback_query, photo=image, caption="Скачать игру Mosaic", kb=rus_in_mosaic)
+
 
 
 # Продвинутое эхо
@@ -510,14 +1038,14 @@ async def lang_rus_back(call: types.CallbackQuery):
 ])
 async def download_doc(message: types.Message):
     # Если (документ) работает также с gif
-	if 'document' in message:
+	if "document" in message:
 		await message.answer_document(message.document.file_id)
 
 		# Необязательная загрузка
 		#await message.document.download()
 
 	# Если (фото)
-	elif 'photo' in message:
+	elif "photo" in message:
 		await message.answer_photo(message.photo[-1].file_id)
 
 		# Необязательная загрузка
@@ -547,144 +1075,6 @@ async def download_doc(message: types.Message):
 
 	    # Необязательная загрузка
 	    #await message.voice.download()
-
-
-
-# English
-@dp.callback_query_handler(text_contains="en_back_")
-async def back_buttons_en(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
-
-# Условия для всех назад кнопок English
-    if call.data == "en_back_games":
-        await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
-    elif call.data == "en_back_ios":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_our_games)
-    elif call.data == "en_back_android":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_our_games)
-    elif call.data == "en_back_pc":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_our_games)
-    elif call.data == "en_back_in_web_games":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_our_games)
-    elif call.data == "en_back_in_pc_web_games":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_web_games)
-    elif call.data == "en_back_in_phone_web_games":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_web_games)
-    elif call.data == "en_back_in_google_play":
-        await bot.send_photo(call.from_user.id, photo=andoid, caption="Choose any game you want to download 🇺🇸", reply_markup=en_in_android)
-    elif call.data == "en_back_mod":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_pc)
-    elif call.data == "en_back_social":
-        await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
-    elif call.data == "en_back_faq":
-        await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
-    elif call.data == "en_back_prof":
-        await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
-    elif call.data == "en_back_donat":
-        await bot.send_photo(call.from_user.id, photo=en_menu, caption="MAIN MENU 🇺🇸", reply_markup=en_mainMenu)
-
-
-# Все inline клавиатуры inline en_in_ перед каждой English
-@dp.callback_query_handler(text_contains="en_in_")
-async def it_buttons_en(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
-
-# Условия для всех inline клавиатур English
-    if call.data == "en_in_our_games":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_our_games)
-    elif call.data == "en_in_ios":
-        await bot.send_photo(call.from_user.id, photo=ios, caption="Choose any game you want to download 🇺🇸", reply_markup=en_in_ios)
-    elif call.data == "en_in_android":
-        await bot.send_photo(call.from_user.id, photo=andoid, caption="Choose any game you want to download 🇺🇸", reply_markup=en_in_android)
-    elif call.data == "en_in_pc":
-        await bot.send_photo(call.from_user.id, photo=pc, caption="Choose any game you want to download 🇺🇸", reply_markup=en_in_pc)
-    elif call.data == "en_in_web_games":
-        await bot.send_photo(call.from_user.id, photo=en_platform, caption=r"SELECT A PLATFORM 🇺🇸", reply_markup=en_in_web_games)
-    elif call.data == "en_in_pc_web_games":
-        await bot.send_photo(call.from_user.id, photo=pc, caption=r"Pick any game you want 🇺🇸", reply_markup=en_in_pc_web_games)
-    elif call.data == "en_in_phone_web_games":
-        await bot.send_photo(call.from_user.id, photo=en_phone, caption=r"Pick any game you want 🇺🇸", reply_markup=en_in_phone_web_games)
-    elif call.data == "en_in_mod_bl":
-        await bot.send_photo(call.from_user.id, photo=en_mod_bl, caption="MOD FOR ENDLESS SUMMER 🇺🇸", reply_markup=en_in_mod_bl)
-    elif call.data == "en_in_google_play":
-        await bot.send_photo(call.from_user.id, photo=google_play, caption="GOOGLE PLAY 🇺🇸", reply_markup=en_in_google_play)
-    elif call.data == "en_in_social_network":
-        await bot.send_photo(call.from_user.id, photo=en_social_network, caption="SOCIAL MEDIA 🇺🇸", reply_markup=en_in_social_network)
-    elif call.data == "en_in_FAQ":
-        await bot.send_photo(call.from_user.id, photo=faq, caption="We have answered frequently asked questions for your convenience 🇺🇸", reply_markup=en_in_FAQ)
-    elif call.data == "en_in_Profile":
-        await bot.send_photo(call.from_user.id, photo=en_profile, caption=f"Your profile ID: {call.from_user.id} \nYou are a human being. \nGood luck using the bot 🇺🇸", reply_markup=en_in_Profile)
-    elif call.data == "en_in_donation":
-        await bot.send_photo(call.from_user.id, photo=en_donation, caption="You can help us be better 🇺🇸", reply_markup=en_in_donation)
-
-
-
-# Russian
-@dp.callback_query_handler(text_contains="rus_back_")
-async def back_buttons_rus(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
-
-# Условия для всех назад кнопок English
-    if call.data == "rus_back_games":
-        await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
-    elif call.data == "rus_back_ios":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_our_games)
-    elif call.data == "rus_back_android":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_our_games)
-    elif call.data == "rus_back_pc":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_our_games)
-    elif call.data == "rus_back_in_web_games":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_our_games)
-    elif call.data == "rus_back_in_pc_web_games":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_web_games)
-    elif call.data == "rus_back_in_phone_web_games":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_web_games)
-    elif call.data == "rus_back_in_google_play":
-        await bot.send_photo(call.from_user.id, photo=andoid, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", reply_markup=rus_in_android)
-    elif call.data == "rus_back_mod":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_pc)
-    elif call.data == "rus_back_social":
-        await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
-    elif call.data == "rus_back_faq":
-        await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
-    elif call.data == "rus_back_prof":
-        await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
-    elif call.data == "rus_back_donat":
-        await bot.send_photo(call.from_user.id, photo=rus_menu, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", reply_markup=rus_mainMenu)
-
-
-# Все inline клавиатуры inline en_in_ перед каждой English
-@dp.callback_query_handler(text_contains="rus_in_")
-async def it_buttons_rus(call: types.CallbackQuery):
-    await bot.delete_message(call.from_user.id, call.message.message_id)
-
-# Условия для всех inline клавиатур English
-    if call.data == "rus_in_our_games":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_our_games)
-    elif call.data == "rus_in_ios":
-        await bot.send_photo(call.from_user.id, photo=ios, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", reply_markup=rus_in_ios)
-    elif call.data == "rus_in_android":
-        await bot.send_photo(call.from_user.id, photo=andoid, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", reply_markup=rus_in_android)
-    elif call.data == "rus_in_pc":
-        await bot.send_photo(call.from_user.id, photo=pc, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", reply_markup=rus_in_pc)
-    elif call.data == "rus_in_web_games":
-        await bot.send_photo(call.from_user.id, photo=rus_platform, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", reply_markup=rus_in_web_games)
-    elif call.data == "rus_in_pc_web_games":
-        await bot.send_photo(call.from_user.id, photo=pc, caption="Выбирай любую игру какую хочешь 🇷🇺", reply_markup=rus_in_pc_web_games)
-    elif call.data == "rus_in_phone_web_games":
-        await bot.send_photo(call.from_user.id, photo=rus_phone, caption="Выбирай любую игру какую хочешь 🇷🇺", reply_markup=rus_in_phone_web_games)
-    elif call.data == "rus_in_mod_bl":
-        await bot.send_photo(call.from_user.id, photo=rus_mod_bl, caption="МОД НА БЕСКНОНЕЧНОГО ЛЕТО 🇷🇺", reply_markup=rus_in_mod_bl)
-    elif call.data == "rus_in_google_play":
-        await bot.send_photo(call.from_user.id, photo=google_play, caption="GOOGLE PLAY 🇷🇺", reply_markup=rus_in_google_play)
-    elif call.data == "rus_in_social_network":
-        await bot.send_photo(call.from_user.id, photo=rus_social_network, caption="СОЦИАЛЬНЫЕ СЕТИ 🇷🇺", reply_markup=rus_in_social_network)
-    elif call.data == "rus_in_FAQ":
-        await bot.send_photo(call.from_user.id, photo=faq, caption="Мы ответили на часто задаваемые вопросы для вашего удобства 🇷🇺", reply_markup=rus_in_FAQ)
-    elif call.data == "rus_in_Profile":
-        await bot.send_photo(call.from_user.id, photo=rus_profile, caption=f"ID вашего профиля: {call.from_user.id} \nВы человек \nЖелаем удачи в пользовании ботом 🇷🇺", reply_markup=rus_in_Profile)
-    elif call.data == "rus_in_donation":
-        await bot.send_photo(call.from_user.id, photo=rus_donation, caption="Вы можете помочь нам стать лучше 🇷🇺", reply_markup=rus_in_donation)
 
 
 
