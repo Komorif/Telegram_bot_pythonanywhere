@@ -20,7 +20,7 @@ from aiogram.utils.markdown import link
 from aiogram import types
 
 
-TOKEN = "5989508618:AAEvFe652Jk836TpS14p9JP4raf0BuapRdo"
+TOKEN = "your token"
 logging.basicConfig(level=logging.INFO)
 
 
@@ -34,11 +34,11 @@ dp = Dispatcher(bot)
 
 # Функция (запуск бота)
 async def on_startup(dp):
-	await bot.send_message(1727165738, "Я запустился")
+	await bot.send_message(your id, "Я запустился")
 
 # Функция (выключение бота)
 async def on_shutdown(dp):
-	await bot.send_message(1727165738, "Я завершил работу")
+	await bot.send_message(your id, "Я завершил работу")
 
 
 # Клавиатура номер 1 (выбором языка)
