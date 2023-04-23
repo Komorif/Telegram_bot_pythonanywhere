@@ -15,8 +15,12 @@ from aiogram.types import BotCommand, BotCommandScopeChat
 
 from aiogram.types import InputMediaPhoto
 
+from aiogram.utils.markdown import link
 
-TOKEN = "5989508618:AAEvFe652Jk836TpS14p9JP4raf0BuapRdo"    
+from aiogram import types
+
+
+TOKEN = "5989508618:AAEvFe652Jk836TpS14p9JP4raf0BuapRdo"
 logging.basicConfig(level=logging.INFO)
 
 
@@ -63,14 +67,15 @@ mainMenu_en_rus_two.add(lang_rus_two)
 en_mainMenu = InlineKeyboardMarkup(row_width=2)
 en_in_our_games = InlineKeyboardButton(text="Our games 🎮", callback_data="en_in_our_games")
 en_in_social_network = InlineKeyboardButton(text="Social Media 🌍", callback_data="en_in_social_network")
-en_in_FAQ = InlineKeyboardButton(text="FAQ❓", callback_data="en_in_FAQ")
 en_in_Profile = InlineKeyboardButton(text="Profile 🧒", callback_data="en_in_Profile")
+en_in_FAQ = InlineKeyboardButton(text="FAQ❓", callback_data="en_in_FAQ")
+en_in_reviews = InlineKeyboardButton(text="Reviews ✏", callback_data="en_in_reviews")
 en_in_donation = InlineKeyboardButton(text="Support 💰", callback_data="en_in_donation")
 en_back_mainMenu = InlineKeyboardButton(text="Back", callback_data="en_back_mainMenu")
 
 # Добавляем кнопки для клавиатуры номер 1 (English)
-en_mainMenu.add(en_in_our_games, en_in_social_network).add(en_in_FAQ, en_in_Profile)
-en_mainMenu.add(en_in_donation)
+en_mainMenu.add(en_in_our_games, en_in_social_network).add(en_in_Profile, en_in_FAQ)
+en_mainMenu.add(en_in_reviews, en_in_donation)
 en_mainMenu.add(en_back_mainMenu)
 
 
@@ -199,6 +204,14 @@ en_in_donation.add(en_in_donation_in)
 en_in_donation.add(en_back_donat)
 
 
+# Клавиатура номер 14 (Отзывы)
+en_in_reviews = InlineKeyboardMarkup(row_width=2)
+en_back_in_reviews = InlineKeyboardButton(text="Back", callback_data="en_back_in_reviews")
+
+# Добавляем кнопки для клавиатуры 14 (Отзывы)
+en_in_reviews.add(en_back_in_reviews)
+
+
 
 # PC
 # Клавиатура номер 1.1 (Мод БЛ)
@@ -251,14 +264,15 @@ en_in_mosaic.add(en_back_in_mosaic)
 rus_mainMenu = InlineKeyboardMarkup(row_width=2)
 rus_in_our_games = InlineKeyboardButton(text="Наши игры 🎮", callback_data="rus_in_our_games")
 rus_in_social_network = InlineKeyboardButton(text="Социалки 🌍", callback_data="rus_in_social_network")
-rus_in_FAQ = InlineKeyboardButton(text="FAQ❓", callback_data="rus_in_FAQ")
 rus_in_Profile = InlineKeyboardButton(text="Профиль 🧒", callback_data="rus_in_Profile")
+rus_in_FAQ = InlineKeyboardButton(text="FAQ❓", callback_data="rus_in_FAQ")
+rus_in_reviews = InlineKeyboardButton(text="Отзывы ✏", callback_data="rus_in_reviews")
 rus_in_donation = InlineKeyboardButton(text="Поддержка 💰", callback_data="rus_in_donation")
 rus_back_mainMenu = InlineKeyboardButton(text="Назад",  callback_data="rus_back_mainMenu")
 
 # Добавляем кнопки для клавиатуры номер 1 (Russian_main_menu)
-rus_mainMenu.add(rus_in_our_games, rus_in_social_network).add(rus_in_FAQ, rus_in_Profile)
-rus_mainMenu.add(rus_in_donation)
+rus_mainMenu.add(rus_in_our_games, rus_in_social_network).add(rus_in_Profile, rus_in_FAQ)
+rus_mainMenu.add(rus_in_reviews, rus_in_donation)
 rus_mainMenu.add(rus_back_mainMenu)
 
 
@@ -388,6 +402,14 @@ rus_in_donation.add(rus_in_donation_in)
 rus_in_donation.add(rus_back_donat)
 
 
+# Клавиатура номер 14 (Отзывы)
+rus_in_reviews = InlineKeyboardMarkup(row_width=2)
+rus_back_in_reviews = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_reviews")
+
+# Добавляем кнопки для клавиатуры 14 (Отзывы)
+rus_in_reviews.add(rus_back_in_reviews)
+
+
 
 # PC
 # Клавиатура номер 1.1 (Мод БЛ)
@@ -449,6 +471,7 @@ en_mod_bl="https://downloader.disk.yandex.ru/preview/d77ef2bdff300f67bc3dfa76d42
 en_platform="https://downloader.disk.yandex.ru/preview/0856ad63f6b1604d107cf01f435a3acb2870138debf1a821202ec6296d1102d2/63c1b0b0/KniNQVNcyYLVfZFvpQk_VrnwjRjeQl6Sbl7ryrTKPw9aIHZN5gDMTD2IB6NuXpiPBDcKAuknVXsIhEAr2IoqVg%3D%3D?uid=0&filename=en_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 en_phone="https://downloader.disk.yandex.ru/preview/ab4d78a35c261ef702b4f7cc4b5831d77d86907a1d53d878232de22c9bcdf556/63d42a9a/sMY82TkfDdbpLU_KYp5ABHq9fksKA_u6Qdlxi1mzlvkYnKyNv5mu8n5nFdECD8WnvEzBXTA5xk_aVhWX8A57Vw%3D%3D?uid=0&filename=phone.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 en_profile="https://downloader.disk.yandex.ru/preview/dce9ab49782fe5182a7772c6a3cc164b74c6b38cdfce13ae96691cb6c7fdc634/63c1b0a1/s0oqgq8sySb2pAGHKhdAv6X3ATg9TGRKmTLY0YJUpISzy3nZJGCDYSf3glLT8pfLn_NK5CQ3-BGJ0RYRMMG39Q%3D%3D?uid=0&filename=en_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+en_reviews="https://downloader.disk.yandex.ru/preview/2d19a70f37647c93e825757563cd3a70d1f2ef3e22c4391710ee7effd9fc20f4/64440b24/07vDvRdiGK_Umqb7K0OKYZasZUJ1CSLRvgRxCbeAmbQkcdGPgonO92JnLOw2u0F7vMvNy1yb2oGyucFpgZPOCw%3D%3D?uid=0&filename=en_reviews.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 
 # Картинки для менюшек Russian
 rus_menu="https://downloader.disk.yandex.ru/preview/170dd84ecdd0e02a097dcb64a021a97c445181048d4d1b22cccd10867a8e5041/63c1b46a/BEY3ThlvSC5pLmNSlclnc9-rcZs5RLWR3E1vERxC9CgFY7Czim8bvmNQ7ppNK1A8NTJ1cnQ4t8Wfgd1UHtE3Pw%3D%3D?uid=0&filename=rus_menu.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
@@ -458,6 +481,7 @@ rus_mod_bl="https://downloader.disk.yandex.ru/preview/713634f417141a913e250c4733
 rus_platform="https://downloader.disk.yandex.ru/preview/e0779c47f7523699a0550b0e831705cc9cd499b05323a175930a608a4b059d3c/64431dd2/Vrk10M4lxUmYpAxy9taM378RG94hQbd9Gv2UXx_WTEckVyY85790xKgkDYejJE6kHQEOr2LtAwefMMR0vek7JQ%3D%3D?uid=0&filename=rus_platform.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 rus_phone="https://downloader.disk.yandex.ru/preview/51d2f367a1a41aa520cfc049eaec03d0d4c4212156a41f1daf28efa75fec1507/63d42ae4/IasrU8Hu2XzBVjdC6D6qZFBavCHoxKachbVWEqGMJmwxvAxbP3osMcrGPezZc3VuXhMOHAM2IACzYjAhChesVw%3D%3D?uid=0&filename=%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 rus_profile="https://downloader.disk.yandex.ru/preview/6811da4964699788c99ae5bb69b41048387bc2d9c1f9e7cb8c5349d9404ec053/63c1b05b/YgAWFr1vJHk_O_uT15w--aX3ATg9TGRKmTLY0YJUpIRVDHxEdaip2EyFseskn7OsIQ737D4UmDZHbGTolY1g3A%3D%3D?uid=0&filename=rus_profile.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
+rus_reviews="https://downloader.disk.yandex.ru/preview/554650e7b6445d784db93fdfa0534767ba2c7e3f039a77be5b506478598012a6/64440788/BDCxFTBY55zKZIJUdHQScoi0ggHk1chw0tThiEIJG-y39tCiZLREiR88alTp-JTq-O_ysKUMBTx28G5bFAFCdw%3D%3D?uid=0&filename=reviews.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
 
 # Картинки для баннеров игры
 calculator_card = "https://downloader.disk.yandex.ru/preview/248584608d648df0d7d34d965eec779a8fbfd06e27ebe4fa3b183f750f77209d/644320b0/FSvNuN28p3ulGk-xcnTfKmRDTHquQMBdtdnjfjgvFfrt2JvOCZUwnKFsVhQNoXCzrf3KveM-3uN-InNkW5BuNw%3D%3D?uid=0&filename=calculator.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048"
@@ -499,7 +523,7 @@ async def set_starting_commands(bot: Bot, chat_id: int):
 async def command_start(message: types.Message):
     await bot.send_photo(message.from_user.id, photo=menu_one, caption="🇺🇸 / 🇷🇺", reply_markup=mainMenu_en_rus)
     await set_starting_commands(bot, message.from_user.id)
-    
+
 
 
 # /help
@@ -551,7 +575,7 @@ async def edit_message(call: types.CallbackQuery, photo,
 
 	await call.message.edit_media(media=image)
 
-	await call.message.edit_caption(caption)
+	await call.message.edit_caption(caption, parse_mode="HTML")
 	await call.message.edit_reply_markup(reply_markup=kb)
 
 
@@ -559,473 +583,500 @@ async def edit_message(call: types.CallbackQuery, photo,
 # /start
 # 1 меню выбор языка
 @dp.callback_query_handler(text_contains="start")
-async def mainMenu_en_rus_two(callback_query: types.CallbackQuery):
+async def mainMenu_en_rus_two(call: types.CallbackQuery):
 
 	image = menu_one
 
 	# Редактируем сообщение, заменяя старую фотографию на новую
-	if callback_query == "mainMenu_en_rus":
-		await edit_message(callback_query, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
+	if call.data == "mainMenu_en_rus":
+		await edit_message(call, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
 
 
 # Итерация с кнопок English и Russian на их менюшки
 @dp.callback_query_handler(text_contains="lang_")
-async def lang_all(callback_query: types.CallbackQuery):
+async def lang_all(call: types.CallbackQuery):
 
 	# Редактируем сообщение, заменяя старую фотографию на новую
-	if callback_query.data == "lang_en":
+	if call.data == "lang_en":
 
 		image = en_menu
 
-		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
 
-	elif callback_query.data == "lang_rus":
+	elif call.data == "lang_rus":
 
 		image = rus_menu
 
-		await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+		await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
 
 
 
 # Отдельный back с mainmenu на выбор языков en
 @dp.callback_query_handler(text_contains="en_back_mainMenu")
-async def lang_en_back(callback_query: types.CallbackQuery):
+async def lang_en_back(call: types.CallbackQuery):
 
 	image = menu_one
 
 	# Редактируем сообщение, заменяя старую фотографию на новую
-	if callback_query.data == "en_back_mainMenu":
-		await edit_message(callback_query, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
+	if call.data == "en_back_mainMenu":
+		await edit_message(call, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
 
 
 # Отдельный back с mainmenu на выбор языков rus
 @dp.callback_query_handler(text_contains="rus_back_mainMenu")
-async def lang_rus_back(callback_query: types.CallbackQuery):
+async def lang_rus_back(call: types.CallbackQuery):
 
 	image = menu_one
 
 	# Редактируем сообщение, заменяя старую фотографию на новую
-	if callback_query.data == "rus_back_mainMenu":
-		await edit_message(callback_query, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
+	if call.data == "rus_back_mainMenu":
+		await edit_message(call, photo=image, caption="🇺🇸 / 🇷🇺", kb=mainMenu_en_rus)
 
 
 
 # English
 # Отдельный back с mainmenu на выбор языков rus
 @dp.callback_query_handler(text_contains="en_back_")
-async def back_buttons_en(callback_query: types.CallbackQuery):
+async def back_buttons_en(call: types.CallbackQuery):
 
 	# Редактируем сообщение, заменяя старую фотографию на новую
 	# Условия для всех назад кнопок назад (English)
-	if callback_query.data == "en_back_games":
+	if call.data == "en_back_games":
 
 		image = en_menu
 
-		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
 
-	elif callback_query.data == "en_back_ios":
-
-		image = en_platform
-
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
-
-
-	elif callback_query.data == "en_back_android":
+	elif call.data == "en_back_ios":
 
 		image = en_platform
 
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
 
-	elif callback_query.data == "en_back_pc":
 
-		image = en_platform
-
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
-
-	elif callback_query.data == "en_back_in_web_games":
+	elif call.data == "en_back_android":
 
 		image = en_platform
 
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
 
-	elif callback_query.data == "en_back_in_pc_web_games":
-
-		image = en_platform
-
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
-
-	elif callback_query.data == "en_back_in_phone_web_games":
+	elif call.data == "en_back_pc":
 
 		image = en_platform
 
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
 
-	elif callback_query.data == "en_back_in_google_play":
+	elif call.data == "en_back_in_web_games":
+
+		image = en_platform
+
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+
+	elif call.data == "en_back_in_pc_web_games":
+
+		image = en_platform
+
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+
+	elif call.data == "en_back_in_phone_web_games":
+
+		image = en_platform
+
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+
+	elif call.data == "en_back_in_google_play":
 
 		image = android
 
-		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+		await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
 
-	elif callback_query.data == "en_back_mod":
+	elif call.data == "en_back_mod":
 
 		image = en_platform
 
-		await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_pc)
+		await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_pc)
 
-	elif callback_query.data == "en_back_social":
-
-		image = en_menu
-
-		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
-
-	elif callback_query.data == "en_back_faq":
+	elif call.data == "en_back_social":
 
 		image = en_menu
 
-		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
 
-	elif callback_query.data == "en_back_prof":
-
-		image = en_menu
-
-		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
-
-	elif callback_query.data == "en_back_donat":
+	elif call.data == "en_back_faq":
 
 		image = en_menu
 
-		await edit_message(callback_query, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
 
-	elif callback_query.data == "en_back_in_pc_calculator":
+	elif call.data == "en_back_prof":
+
+		image = en_menu
+
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif call.data == "en_back_donat":
+
+		image = en_menu
+
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+	elif call.data == "en_back_in_pc_calculator":
 
 		image = pc
 
-		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_pc)
+		await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_pc)
 
-	elif callback_query.data == "en_back_in_cars_two":
-
-		image = android
-
-		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
-
-	elif callback_query.data == "en_back_in_mosaic":
+	elif call.data == "en_back_in_cars_two":
 
 		image = android
 
-		await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+		await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+
+	elif call.data == "en_back_in_mosaic":
+
+		image = android
+
+		await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+
+	elif call.data == "en_back_in_reviews":
+
+		image = en_menu
+
+		await edit_message(call, photo=image, caption="MAIN MENU 🇺🇸", kb=en_mainMenu)
+
+
 
 
 
 
 # Все inline клавиатуры inline en_in_ перед каждой English
 @dp.callback_query_handler(text_contains="en_in_")
-async def it_buttons_en(callback_query: types.CallbackQuery):
+async def it_buttons_en(call: types.CallbackQuery):
 
 	# Редактируем сообщение, заменяя старую фотографию на новую
 	# Условия для всех назад кнопок rus_in_ (English)
-    if callback_query.data == "en_in_our_games":
+    if call.data == "en_in_our_games":
 
     	image = en_platform
 
-    	await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
+    	await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_our_games)
 
-    elif callback_query.data == "en_in_ios":
+    elif call.data == "en_in_ios":
 
     	image = ios
 
-    	await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_ios)
+    	await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_ios)
 
-    elif callback_query.data == "en_in_android":
+    elif call.data == "en_in_android":
 
     	image = android
 
-    	await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
+    	await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_android)
 
-    elif callback_query.data == "en_in_pc":
+    elif call.data == "en_in_pc":
 
     	image = pc
 
-    	await edit_message(callback_query, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_pc)
+    	await edit_message(call, photo=image, caption="Choose any game you want to download 🇺🇸", kb=en_in_pc)
 
-    elif callback_query.data == "en_in_web_games":
+    elif call.data == "en_in_web_games":
 
     	image = en_platform
 
-    	await edit_message(callback_query, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
+    	await edit_message(call, photo=image, caption=r"SELECT A PLATFORM 🇺🇸", kb=en_in_web_games)
 
-    elif callback_query.data == "en_in_pc_web_games":
+    elif call.data == "en_in_pc_web_games":
 
     	image = pc
 
-    	await edit_message(callback_query, photo=image, caption="Pick any game you want 🇺🇸", kb=en_in_pc_web_games)
+    	await edit_message(call, photo=image, caption="Pick any game you want 🇺🇸", kb=en_in_pc_web_games)
 
-    elif callback_query.data == "en_in_phone_web_games":
+    elif call.data == "en_in_phone_web_games":
 
     	image = en_phone
 
-    	await edit_message(callback_query, photo=image, caption="Pick any game you want 🇺🇸", kb=en_in_phone_web_games)
+    	await edit_message(call, photo=image, caption="Pick any game you want 🇺🇸", kb=en_in_phone_web_games)
 
-    elif callback_query.data == "en_in_mod_bl":
+    elif call.data == "en_in_mod_bl":
 
     	image = endless_summer_card
 
-    	await edit_message(callback_query, photo=image, caption="MOD FOR ENDLESS SUMMER 🇺🇸", kb=en_in_mod_bl)
+    	await edit_message(call, photo=image, caption="MOD FOR ENDLESS SUMMER 🇺🇸", kb=en_in_mod_bl)
 
-    elif callback_query.data == "en_in_google_play":
+    elif call.data == "en_in_google_play":
 
     	image = google_play
 
-    	await edit_message(callback_query, photo=image, caption="GOOGLE PLAY 🇺🇸", kb=en_in_google_play)
+    	await edit_message(call, photo=image, caption="GOOGLE PLAY 🇺🇸", kb=en_in_google_play)
 
-    elif callback_query.data == "en_in_social_network":
+    elif call.data == "en_in_social_network":
 
     	image = en_social_network
 
-    	await edit_message(callback_query, photo=image, caption="SOCIAL MEDIA 🇺🇸", kb=en_in_social_network)
+    	await edit_message(call, photo=image, caption="SOCIAL MEDIA 🇺🇸", kb=en_in_social_network)
 
-    elif callback_query.data == "en_in_FAQ":
+    elif call.data == "en_in_FAQ":
 
     	image = faq
 
-    	await edit_message(callback_query, photo=image, caption="We have answered frequently asked questions for your convenience 🇺🇸", kb=en_in_FAQ)
+    	await edit_message(call, photo=image, caption="We have answered frequently asked questions for your convenience 🇺🇸", kb=en_in_FAQ)
 
-    elif callback_query.data == "en_in_Profile":
+    elif call.data == "en_in_Profile":
 
     	image = en_profile
 
-    	await edit_message(callback_query, photo=image, caption="You are a human being. \nGood luck using the bot 🇺🇸", kb=en_in_Profile)
+    	await edit_message(call, photo=image, caption="You are a human being. \nGood luck using the bot 🇺🇸", kb=en_in_Profile)
 
-    elif callback_query.data == "en_in_donation":
+    elif call.data == "en_in_donation":
 
     	image = en_donation
 
-    	await edit_message(callback_query, photo=image, caption="You can help us be better 🇺🇸", kb=en_in_donation)
+    	await edit_message(call, photo=image, caption="You can help us be better 🇺🇸", kb=en_in_donation)
 
-    elif callback_query.data == "en_in_pc_calculator":
+    elif call.data == "en_in_pc_calculator":
 
     	image = calculator_card
 
-    	await edit_message(callback_query, photo=image, caption="This application was created ONLY for Windows.\nWith this calculator you can perform simple operations such as addition, division, subtraction, etc.", kb=en_in_pc_calculator)
+    	await edit_message(call, photo=image, caption="This application was created ONLY for Windows.\nWith this calculator you can perform simple operations such as addition, division, subtraction, etc. 🇺🇸", kb=en_in_pc_calculator)
 
-    elif callback_query.data == "en_in_cars_two":
+    elif call.data == "en_in_cars_two":
 
     	image = cars_card
 
-    	await edit_message(callback_query, photo=image, caption="Download the game cars two", kb=en_in_cars_two)
+    	await edit_message(call, photo=image, caption="Download the game cars two 🇺🇸", kb=en_in_cars_two)
 
-    elif callback_query.data == "en_in_mosaic":
+    elif call.data == "en_in_mosaic":
 
     	image = mosaic_card
 
-    	await edit_message(callback_query, photo=image, caption="Download the game Mosaic", kb=en_in_mosaic)
+    	await edit_message(call, photo=image, caption="Download the game Mosaic 🇺🇸", kb=en_in_mosaic)
+
+    elif call.data == "en_in_reviews":
+    	image = en_reviews
+    	await edit_message(call, photo=image,
+										caption='We have a separate <a href="https://t.me/+oemeUSzhSv44YmIy">chat room</a> with the reviews of our games, where everyone can leave their feedback\nTo see the reviews, click on – <a href="https://t.me/+oemeUSzhSv44YmIy">here</a> 🇺🇸',
+										kb=en_in_reviews)
 
 
 
 # Russian
 @dp.callback_query_handler(text_contains="rus_back_")
-async def back_buttons_rus(callback_query: types.CallbackQuery):
-   
+async def back_buttons_rus(call: types.CallbackQuery):
+
 	# Редактируем сообщение, заменяя старую фотографию на новую
 	# Условия для всех назад кнопок назад (Russian)
-    if callback_query.data == "rus_back_games":
+    if call.data == "rus_back_games":
 
     	image = rus_menu
 
-    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+    	await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
 
-    elif callback_query.data == "rus_back_ios":
-
-    	image = rus_platform
-
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
-
-    elif callback_query.data == "rus_back_android":
+    elif call.data == "rus_back_ios":
 
     	image = rus_platform
 
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
 
-    elif callback_query.data == "rus_back_pc":
-
-    	image = rus_platform
-
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
-
-    elif callback_query.data == "rus_back_in_web_games":
+    elif call.data == "rus_back_android":
 
     	image = rus_platform
 
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
 
-    elif callback_query.data == "rus_back_in_pc_web_games":
-
-    	image = rus_platform
-
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
-
-    elif callback_query.data == "rus_back_in_phone_web_games":
+    elif call.data == "rus_back_pc":
 
     	image = rus_platform
 
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
 
-    elif callback_query.data == "rus_back_in_google_play":
+    elif call.data == "rus_back_in_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+
+    elif call.data == "rus_back_in_pc_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+
+    elif call.data == "rus_back_in_phone_web_games":
+
+    	image = rus_platform
+
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+
+    elif call.data == "rus_back_in_google_play":
 
     	image = android
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
 
-    elif callback_query.data == "rus_back_mod":
+    elif call.data == "rus_back_mod":
 
     	image = rus_platform
 
-    	await edit_message(callback_query, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_pc)
+    	await edit_message(call, photo=image, caption="ВЫВЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_pc)
 
-    elif callback_query.data == "rus_back_social":
-
-    	image = rus_menu
-
-    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
-
-    elif callback_query.data == "rus_back_faq":
+    elif call.data == "rus_back_social":
 
     	image = rus_menu
 
-    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+    	await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
 
-    elif callback_query.data == "rus_back_prof":
-
-    	image = rus_menu
-
-    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
-
-    elif callback_query.data == "rus_back_donat":
+    elif call.data == "rus_back_faq":
 
     	image = rus_menu
 
-    	await edit_message(callback_query, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+    	await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
 
-    elif callback_query.data == "rus_back_in_pc_calculator":
+    elif call.data == "rus_back_prof":
+
+    	image = rus_menu
+
+    	await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif call.data == "rus_back_donat":
+
+    	image = rus_menu
+
+    	await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
+
+    elif call.data == "rus_back_in_pc_calculator":
 
     	image = pc
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_pc)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_pc)
 
-    elif callback_query.data == "rus_back_in_cars_two":
-
-    	image = android
-
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
-
-    elif callback_query.data == "rus_back_in_mosaic":
+    elif call.data == "rus_back_in_cars_two":
 
     	image = android
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
 
+    elif call.data == "rus_back_in_mosaic":
+
+    	image = android
+
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+
+    elif call.data == "rus_back_in_reviews":
+
+    	image = rus_menu
+
+    	await edit_message(call, photo=image, caption="ГЛАВНОЕ МЕНЮ 🇷🇺", kb=rus_mainMenu)
 
 
 # Все inline клавиатуры inline en_in_ перед каждой English
 @dp.callback_query_handler(text_contains="rus_in_")
-async def it_buttons_rus(callback_query: types.CallbackQuery):
-    
+async def it_buttons_rus(call: types.CallbackQuery):
+
 	# Редактируем сообщение, заменяя старую фотографию на новую
 	# Условия для всех назад кнопок rus_in_ (Russian)
-    if callback_query.data == "rus_in_our_games":
+    if call.data == "rus_in_our_games":
 
     	image = rus_platform
 
-    	await edit_message(callback_query, photo=image, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
+    	await edit_message(call, photo=image, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_our_games)
 
-    elif callback_query.data == "rus_in_ios":
+    elif call.data == "rus_in_ios":
 
     	image = ios
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_ios)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_ios)
 
-    elif callback_query.data == "rus_in_android":
+    elif call.data == "rus_in_android":
 
     	image = android
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_android)
 
-    elif callback_query.data == "rus_in_pc":
+    elif call.data == "rus_in_pc":
 
     	image = pc
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_pc)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь скачать 🇷🇺", kb=rus_in_pc)
 
-    elif callback_query.data == "rus_in_web_games":
+    elif call.data == "rus_in_web_games":
 
     	image = rus_platform
 
-    	await edit_message(callback_query, photo=image, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
+    	await edit_message(call, photo=image, caption="ВЫБЕРИТЕ ПЛАТФОРМУ 🇷🇺", kb=rus_in_web_games)
 
-    elif callback_query.data == "rus_in_pc_web_games":
+    elif call.data == "rus_in_pc_web_games":
 
     	image = pc
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь 🇷🇺", kb=rus_in_pc_web_games)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь 🇷🇺", kb=rus_in_pc_web_games)
 
-    elif callback_query.data == "rus_in_phone_web_games":
+    elif call.data == "rus_in_phone_web_games":
 
     	image = rus_phone
 
-    	await edit_message(callback_query, photo=image, caption="Выбирай любую игру какую хочешь 🇷🇺", kb=rus_in_phone_web_games)
+    	await edit_message(call, photo=image, caption="Выбирай любую игру какую хочешь 🇷🇺", kb=rus_in_phone_web_games)
 
-    elif callback_query.data == "rus_in_mod_bl":
+    elif call.data == "rus_in_mod_bl":
 
     	image = endless_summer_card
 
-    	await edit_message(callback_query, photo=image, caption="МОД НА БЕСКНОНЕЧНОГО ЛЕТО 🇷🇺", kb=rus_in_mod_bl)
+    	await edit_message(call, photo=image, caption="МОД НА БЕСКНОНЕЧНОГО ЛЕТО 🇷🇺", kb=rus_in_mod_bl)
 
-    elif callback_query.data == "rus_in_google_play":
+    elif call.data == "rus_in_google_play":
 
     	image = google_play
 
-    	await edit_message(callback_query, photo=image, caption="GOOGLE PLAY 🇷🇺", kb=rus_in_google_play)
+    	await edit_message(call, photo=image, caption="GOOGLE PLAY 🇷🇺", kb=rus_in_google_play)
 
-    elif callback_query.data == "rus_in_social_network":
+    elif call.data == "rus_in_social_network":
 
     	image = rus_social_network
 
-    	await edit_message(callback_query, photo=image, caption="СОЦИАЛЬНЫЕ СЕТИ 🇷🇺", kb=rus_in_social_network)
+    	await edit_message(call, photo=image, caption="СОЦИАЛЬНЫЕ СЕТИ 🇷🇺", kb=rus_in_social_network)
 
-    elif callback_query.data == "rus_in_FAQ":
+    elif call.data == "rus_in_FAQ":
 
     	image = faq
 
-    	await edit_message(callback_query, photo=image, caption="Мы ответили на часто задаваемые вопросы для вашего удобства 🇷🇺", kb=rus_in_FAQ)
+    	await edit_message(call, photo=image, caption="Мы ответили на часто задаваемые вопросы для вашего удобства 🇷🇺", kb=rus_in_FAQ)
 
-    elif callback_query.data == "rus_in_Profile":
+    elif call.data == "rus_in_Profile":
 
     	image = rus_profile
 
-    	await edit_message(callback_query, photo=image, caption="Вы человек \nЖелаем удачи в пользовании ботом 🇷🇺", kb=rus_in_Profile)
+    	await edit_message(call, photo=image, caption="Вы человек \nЖелаем удачи в пользовании ботом 🇷🇺", kb=rus_in_Profile)
 
-    elif callback_query.data == "rus_in_donation":
+    elif call.data == "rus_in_donation":
 
     	image = rus_donation
 
-    	await edit_message(callback_query, photo=image, caption="Вы можете помочь нам стать лучше 🇷🇺", kb=rus_in_donation)
+    	await edit_message(call, photo=image, caption="Вы можете помочь нам стать лучше 🇷🇺", kb=rus_in_donation)
 
-    elif callback_query.data == "rus_in_pc_calculator":
+    elif call.data == "rus_in_pc_calculator":
 
     	image = calculator_card
 
-    	await edit_message(callback_query, photo=image, caption="Это приложение было создано ТОЛЬКО для Windows.\nС помощью этого калькулятора вы можете выполнять простые операции, такие как сложение, деление, вычитание и т.д.", kb=rus_in_pc_calculator)
+    	await edit_message(call, photo=image, caption="Это приложение было создано ТОЛЬКО для Windows.\nС помощью этого калькулятора вы можете выполнять простые операции, такие как сложение, деление, вычитание и т.д. 🇷🇺", kb=rus_in_pc_calculator)
 
-    elif callback_query.data == "rus_in_cars_two":
+    elif call.data == "rus_in_cars_two":
 
     	image = cars_card
 
-    	await edit_message(callback_query, photo=image, caption="Скачать игру Cars two", kb=rus_in_cars_two)
+    	await edit_message(call, photo=image, caption="Скачать игру Cars two 🇷🇺", kb=rus_in_cars_two)
 
-    elif callback_query.data == "rus_in_mosaic":
+    elif call.data == "rus_in_mosaic":
 
     	image = mosaic_card
 
-    	await edit_message(callback_query, photo=image, caption="Скачать игру Mosaic", kb=rus_in_mosaic)
+    	await edit_message(call, photo=image, caption="Скачать игру Mosaic 🇷🇺", kb=rus_in_mosaic)
+
+    elif call.data == "rus_in_reviews":
+
+    	image = rus_reviews
+
+    	await edit_message(call, photo=image,
+										caption='У нас есть <a href="https://t.me/+gaRe71AYudBmMTRi">чат</a> с отзывами наших игр, где каждый может оставить свой отзыв\nЧтобы посмотреть отзывы нажми – <a href="https://t.me/+gaRe71AYudBmMTRi">здесь</a> 🇷🇺',
+										kb=rus_in_reviews)
 
 
 
