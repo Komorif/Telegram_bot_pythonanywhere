@@ -20,7 +20,7 @@ from aiogram.utils.markdown import link
 from aiogram import types
 
 
-TOKEN = "your token"
+TOKEN = "5989508618:AAEvFe652Jk836TpS14p9JP4raf0BuapRdo"
 logging.basicConfig(level=logging.INFO)
 
 
@@ -34,11 +34,11 @@ dp = Dispatcher(bot)
 
 # Функция (запуск бота)
 async def on_startup(dp):
-	await bot.send_message(your id, "Я запустился")
+	await bot.send_message(1727165738, "Я запустился")
 
 # Функция (выключение бота)
 async def on_shutdown(dp):
-	await bot.send_message(your id, "Я завершил работу")
+	await bot.send_message(1727165738, "Я завершил работу")
 
 
 # Клавиатура номер 1 (выбором языка)
@@ -178,11 +178,9 @@ en_in_social_network.add(en_back_social)
 
 # Клавиатура номер 11 (FAQ)
 en_in_FAQ = InlineKeyboardMarkup(row_width=2)
-en_in_FAQ_ds = InlineKeyboardButton(text="Here ⬆", url = "https://1drv.ms/w/s!AtF4vCOqewgBoCr1uMzSn-xf_3fV?e=rmxrjf", callback_data="en_in_FAQ_ds")
 en_back_faq = InlineKeyboardButton(text="Back", callback_data="en_back_faq")
 
 # Добавляем кнопки для клавиатуры номер 11 (FAQ)
-en_in_FAQ.add(en_in_FAQ_ds)
 en_in_FAQ.add(en_back_faq)
 
 
@@ -376,11 +374,9 @@ rus_in_social_network.add(rus_back_social)
 
 # Клавиатура номер 11 (FAQ)
 rus_in_FAQ = InlineKeyboardMarkup(row_width=2)
-rus_in_FAQ_ds = InlineKeyboardButton(text="Тут ⬆", url = "https://1drv.ms/w/s!AtF4vCOqewgBoB1t_x6DdrpMX1QH?e=wrR0sq", callback_data="rus_in_FAQ_ds")
 rus_back_faq = InlineKeyboardButton(text="Назад", callback_data="rus_back_faq")
 
 # Добавляем кнопки для клавиатуры номер 11 (FAQ)
-rus_in_FAQ.add(rus_in_FAQ_ds)
 rus_in_FAQ.add(rus_back_faq)
 
 
@@ -819,7 +815,9 @@ async def it_buttons_en(call: types.CallbackQuery):
 
     	image = faq
 
-    	await edit_message(call, photo=image, caption="We have answered frequently asked questions for your convenience 🇺🇸", kb=en_in_FAQ)
+    	await edit_message(call, photo=image,
+										caption='We have answered frequently asked questions for your convenience <a href="https://telegra.ph/FAQ-04-25-10">here</a> 🇺🇸',
+										kb=en_in_FAQ)
 
     elif call.data == "en_in_Profile":
 
@@ -852,7 +850,9 @@ async def it_buttons_en(call: types.CallbackQuery):
     	await edit_message(call, photo=image, caption="Download the game Mosaic 🇺🇸", kb=en_in_mosaic)
 
     elif call.data == "en_in_reviews":
+
     	image = en_reviews
+
     	await edit_message(call, photo=image,
 										caption='We have a separate <a href="https://t.me/+oemeUSzhSv44YmIy">chat room</a> with the reviews of our games, where everyone can leave their feedback\nTo see the reviews, click on – <a href="https://t.me/+oemeUSzhSv44YmIy">here</a> 🇺🇸',
 										kb=en_in_reviews)
@@ -1038,7 +1038,9 @@ async def it_buttons_rus(call: types.CallbackQuery):
 
     	image = faq
 
-    	await edit_message(call, photo=image, caption="Мы ответили на часто задаваемые вопросы для вашего удобства 🇷🇺", kb=rus_in_FAQ)
+    	await edit_message(call, photo=image,
+										caption='Мы ответили на часто задаваемые вопросы для вашего удобства <a href="https://telegra.ph/FAQ-04-25-9">тут</a> 🇷🇺',
+										kb=rus_in_FAQ)
 
     elif call.data == "rus_in_Profile":
 
