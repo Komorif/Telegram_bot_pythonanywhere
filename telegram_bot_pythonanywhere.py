@@ -25,7 +25,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 # прокси
-proxy_url = "http://proxy.server:3128"
+proxy_url = "your proxy url"
 
 
 bot = Bot(token=TOKEN, proxy=proxy_url)
@@ -162,33 +162,13 @@ en_in_google_play.add(en_back_in_google_play)
 
 # Клавиатура номер 10 (социальные сети)
 en_in_social_network = InlineKeyboardMarkup(row_width=2)
-
-en_in_youtube_one = InlineKeyboardButton(text="YOUTUBE 1 📺",
-										url="https://www.youtube.com/channel/UC9EJAIYe4sL0iGB_huHTqHw",
-										callback_data="en_in_youtube_one")
-
-en_in_youtube_two = InlineKeyboardButton(text="YOUTUBE 2 📺",
-										url="https://www.youtube.com/channel/UCb2GlPOgqB_VpWTvQM_dzKg",
-										callback_data="en_in_youtube_two")
-
-en_in_twitch = InlineKeyboardButton(text="TWITCH 🔴",
-									url="https://www.twitch.tv/komorifn",
-									callback_data="en_in_twitch")
-
-en_in_discord = InlineKeyboardButton(text="DISCORD 🗣️",
-									url="https://discord.gg/2pbCpNcDZm",
-									callback_data="en_in_discord")
-
-en_in_github = InlineKeyboardButton(text="GITHUB 💣",
-									url="https://github.com/Komorif",
-									callback_data="en_in_github")
-
-en_in_vk = InlineKeyboardButton(text="VK ✔️",
-								url="https://vk.com/komorilfg",
-								callback_data="en_in_vk")
-
-en_back_social = InlineKeyboardButton(text="Back",
-								callback_data="en_back_social")
+en_in_youtube_one = InlineKeyboardButton(text="YOUTUBE 1 📺", url="https://www.youtube.com/channel/UC9EJAIYe4sL0iGB_huHTqHw", callback_data="en_in_youtube_one")
+en_in_youtube_two = InlineKeyboardButton(text="YOUTUBE 2 📺", url="https://www.youtube.com/channel/UCb2GlPOgqB_VpWTvQM_dzKg", callback_data="en_in_youtube_two")
+en_in_twitch = InlineKeyboardButton(text="TWITCH 🔴", url="https://www.twitch.tv/komorifn", callback_data="en_in_twitch")
+en_in_discord = InlineKeyboardButton(text="DISCORD 🗣️", url="https://discord.gg/2pbCpNcDZm", callback_data="en_in_discord")
+en_in_github = InlineKeyboardButton(text="GITHUB 💣", url="https://github.com/Komorif", callback_data="en_in_github")
+en_in_vk = InlineKeyboardButton(text="VK ✔️", url="https://vk.com/komorilfg", callback_data="en_in_vk")
+en_back_social = InlineKeyboardButton(text="Back", callback_data="en_back_social")
 
 # Добавляем кнопки для клавиатуры номер 10 (социальные сети)
 en_in_social_network.add(en_in_youtube_one, en_in_youtube_two).add(en_in_twitch, en_in_discord)
@@ -214,11 +194,7 @@ en_in_Profile.add(en_back_prof)
 
 # Клавиатура номер 13 (Пожертвования)
 en_in_donation = InlineKeyboardMarkup(row_width=2)
-
-en_in_donation_in = InlineKeyboardButton(text="Donation 💰",
-										url="https://www.donationalerts.com/r/fetchy74",
-										callback_data="en_in_donation_in")
-
+en_in_donation_in = InlineKeyboardButton(text="Donation 💰", url="https://www.donationalerts.com/r/fetchy74", callback_data="en_in_donation_in")
 en_back_donat = InlineKeyboardButton(text="Back", callback_data="en_back_donat")
 
 # Добавляем кнопки для клавиатуры 13 (Пожертвования)
@@ -238,11 +214,7 @@ en_in_reviews.add(en_back_in_reviews)
 # PC
 # Клавиатура номер 1.1 (Мод БЛ)
 en_in_mod_bl = InlineKeyboardMarkup(row_width=2)
-
-en_in_mod_bl_button_download = InlineKeyboardButton(text="Download mod for the game ES 🧚‍♂️",
-													url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA",
-													callback_data="en_in_mod_bl_downl")
-
+en_in_mod_bl_button_download = InlineKeyboardButton(text="Download mod for the game ES 🧚‍♂️", url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA", callback_data="en_in_mod_bl_downl")
 en_back_mod = InlineKeyboardButton(text="Back", callback_data="en_back_mod")
 
 # Добавляем кнопки для клавиатуры номер 1.1 (Мод БЛ)
@@ -252,11 +224,7 @@ en_in_mod_bl.add(en_back_mod)
 
 # Клавиатура 1.2 (Карточка Калькулятор)
 en_in_pc_calculator = InlineKeyboardMarkup(row_width=2)
-
-en_in_pc_calculator_button_download = InlineKeyboardButton(text="Download",
-															url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",
-															callback_data="en_in_pc_calculator_button_download")
-
+en_in_pc_calculator_button_download = InlineKeyboardButton(text="Download", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA", callback_data="en_in_pc_calculator_button_download")
 en_back_in_pc_calculator = InlineKeyboardButton(text="Back", callback_data="en_back_in_pc_calculator")
 
 # Добавляем кнопки для клавиатуры номер 1.2 (Карточка Калькулятор)
@@ -268,11 +236,7 @@ en_in_pc_calculator.add(en_back_in_pc_calculator)
 # Android
 # Клавиатура номер 1.1 (Машины)
 en_in_cars_two = InlineKeyboardMarkup(row_width=2)
-
-en_in_android_cars_two_button_download = InlineKeyboardButton(text="Download",
-															url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",
-															callback_data="en_in_android_cars_two_button_download")
-
+en_in_android_cars_two_button_download = InlineKeyboardButton(text="Download", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA", callback_data="en_in_android_cars_two_button_download")
 en_back_in_cars_two = InlineKeyboardButton(text="Back", callback_data="en_back_in_cars_two")
 
 # Добавляем кнопки для клавиатуры номер 1.1 (Машины)
@@ -283,11 +247,7 @@ en_in_cars_two.add(en_back_in_cars_two)
 
 # Клавиатура номер 1.2 (Мозаика)
 en_in_mosaic = InlineKeyboardMarkup(row_width=2)
-
-en_in_android_mosaic_button_download = InlineKeyboardButton(text="Download",
-															url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g",
-															callback_data="en_in_android_mosaic_button_download")
-
+en_in_android_mosaic_button_download = InlineKeyboardButton(text="Download", url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g", callback_data="en_in_android_mosaic_button_download")
 en_back_in_mosaic = InlineKeyboardButton(text="Back", callback_data="en_back_in_mosaic")
 
 # Добавляем кнопки для клавиатуры номер 1.2 (Мозаика)
@@ -398,31 +358,12 @@ rus_in_google_play.add(rus_back_in_google_play)
 
 # Клавиатура номер 10 (социальные сети)
 rus_in_social_network = InlineKeyboardMarkup(row_width=2)
-
-rus_in_youtube_one = InlineKeyboardButton(text="YOUTUBE 1 📺",
-										url="https://www.youtube.com/channel/UC9EJAIYe4sL0iGB_huHTqHw",
-										callback_data="rus_in_youtube_one")
-
-rus_in_youtube_two = InlineKeyboardButton(text="YOUTUBE 2 📺",
-										url="https://www.youtube.com/channel/UCb2GlPOgqB_VpWTvQM_dzKg",
-										callback_data="rus_in_youtube_two")
-
-rus_in_twitch = InlineKeyboardButton(text="TWITCH 🔴",
-									url="https://www.twitch.tv/komorifn",
-									callback_data="rus_in_twitch")
-
-rus_in_discord = InlineKeyboardButton(text="DISCORD 🗣️",
-									url="https://discord.gg/2pbCpNcDZm",
-									callback_data="rus_in_discord")
-
-rus_in_github = InlineKeyboardButton(text="GITHUB 💣",
-									url="https://github.com/Komorif",
-									callback_data="rus_in_github")
-
-rus_in_vk = InlineKeyboardButton(text="VK ✔️",
-								url="https://vk.com/komorilfg",
-								callback_data="rus_in_vk")
-
+rus_in_youtube_one = InlineKeyboardButton(text="YOUTUBE 1 📺", url="https://www.youtube.com/channel/UC9EJAIYe4sL0iGB_huHTqHw", callback_data="rus_in_youtube_one")
+rus_in_youtube_two = InlineKeyboardButton(text="YOUTUBE 2 📺", url="https://www.youtube.com/channel/UCb2GlPOgqB_VpWTvQM_dzKg", callback_data="rus_in_youtube_two")
+rus_in_twitch = InlineKeyboardButton(text="TWITCH 🔴", url="https://www.twitch.tv/komorifn", callback_data="rus_in_twitch")
+rus_in_discord = InlineKeyboardButton(text="DISCORD 🗣️", url="https://discord.gg/2pbCpNcDZm", callback_data="rus_in_discord")
+rus_in_github = InlineKeyboardButton(text="GITHUB 💣", url="https://github.com/Komorif", callback_data="rus_in_github")
+rus_in_vk = InlineKeyboardButton(text="VK ✔️", url="https://vk.com/komorilfg", callback_data="rus_in_vk")
 rus_back_social = InlineKeyboardButton(text="Назад", callback_data="rus_back_social")
 
 # Добавляем кнопки для клавиатуры номер 10 (социальные сети)
@@ -449,11 +390,7 @@ rus_in_Profile.add(rus_back_prof)
 
 # Клавиатура номер 13 (Пожертвования)
 rus_in_donation = InlineKeyboardMarkup(row_width=2)
-
-rus_in_donation_in = InlineKeyboardButton(text="Пожертвование 💰",
-										url="https://www.donationalerts.com/r/fetchy74",
-										callback_data="rus_in_donation_in")
-
+rus_in_donation_in = InlineKeyboardButton(text="Пожертвование 💰", url="https://www.donationalerts.com/r/fetchy74", callback_data="rus_in_donation_in")
 rus_back_donat = InlineKeyboardButton(text="Назад", callback_data="rus_back_donat")
 
 # Добавляем кнопки для клавиатуры 13 (Пожертвования)
@@ -473,11 +410,7 @@ rus_in_reviews.add(rus_back_in_reviews)
 # PC
 # Клавиатура номер 1.1 (Мод БЛ)
 rus_in_mod_bl = InlineKeyboardMarkup(row_width=2)
-
-rus_in_mod_bl_button_download = InlineKeyboardButton(text="Скачать мод для игры БЛ 🧚‍♂️",
-													url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA",
-													callback_data="rus_in_mod_bl_button_download")
-
+rus_in_mod_bl_button_download = InlineKeyboardButton(text="Скачать мод для игры БЛ 🧚‍♂️", url="https://disk.yandex.ru/d/XmU8R4pGdsiuIA", callback_data="rus_in_mod_bl_button_download")
 rus_back_mod = InlineKeyboardButton(text="Назад", callback_data="rus_back_mod")
 
 # Добавляем кнопки для клавиатуры номер 1.1 (Мод БЛ)
@@ -487,11 +420,7 @@ rus_in_mod_bl.add(rus_back_mod)
 
 # Клавиатура 1.2 (Карточка Калькулятор)
 rus_in_pc_calculator = InlineKeyboardMarkup(row_width=2)
-
-rus_in_pc_calculator_button_download = InlineKeyboardButton(text="Скачать",
-															url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",
-															callback_data="rus_in_pc_calculator_button_download")
-
+rus_in_pc_calculator_button_download = InlineKeyboardButton(text="Скачать", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA", callback_data="rus_in_pc_calculator_button_download")
 rus_back_in_pc_calculator = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_pc_calculator")
 
 # Добавляем кнопки для клавиатуры номер 1.2 (Карточка Калькулятор)
@@ -503,10 +432,7 @@ rus_in_pc_calculator.add(rus_back_in_pc_calculator)
 # Android
 # Клавиатура номер 1.1 (Машины)
 rus_in_cars_two = InlineKeyboardMarkup(row_width=2)
-rus_in_android_cars_two_button_download = InlineKeyboardButton(text="Скачать",
-																url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA",
-																callback_data="rus_in_android_cars_two_button_download")
-
+rus_in_android_cars_two_button_download = InlineKeyboardButton(text="Скачать", url="https://disk.yandex.ru/d/rDZ7E98l2uj8YA", callback_data="rus_in_android_cars_two_button_download")
 rus_back_in_cars_two = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_cars_two")
 
 # Добавляем кнопки для клавиатуры номер 1.1 (Машины)
@@ -516,10 +442,7 @@ rus_in_cars_two.add(rus_back_in_cars_two)
 
 # Клавиатура номер 1.2 (Мозаика)
 rus_in_mosaic = InlineKeyboardMarkup(row_width=2)
-rus_in_android_mosaic_button_download = InlineKeyboardButton(text="Скачать",
-															url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g",
-															callback_data="rus_in_android_mosaic_button_download")
-
+rus_in_android_mosaic_button_download = InlineKeyboardButton(text="Скачать", url="https://disk.yandex.ru/d/G2b7dN2O8vFd7g", callback_data="rus_in_android_mosaic_button_download")
 rus_back_in_mosaic = InlineKeyboardButton(text="Назад", callback_data="rus_back_in_mosaic")
 
 # Добавляем кнопки для клавиатуры номер 1.2 (Мозаика)
