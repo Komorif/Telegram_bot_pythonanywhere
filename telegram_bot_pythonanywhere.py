@@ -25,7 +25,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 # прокси
-proxy_url = "your proxy url"
+proxy_url = "your proxy_url"
 
 
 bot = Bot(token=TOKEN, proxy=proxy_url)
@@ -896,7 +896,7 @@ async def it_buttons_en(call: types.CallbackQuery):
     	image = faq
 
     	await edit_message(call, photo=image, caption="We have answered frequently asked questions for your convenience"
-														'<a href="your telegraph">here</a> 🇺🇸',
+														'<a href="your telegraph"> here</a> 🇺🇸',
 														kb=en_in_FAQ)
 
     elif call.data == "en_in_Profile":
@@ -937,8 +937,8 @@ async def it_buttons_en(call: types.CallbackQuery):
     	image = en_reviews
 
     	await edit_message(call, photo=image, caption='We have a separate <a href="https://t.me/+oemeUSzhSv44YmIy">chat room</a>'
-														"with the reviews of our games, where everyone can leave their feedback"
-														'\nTo see the reviews, click on – <a href="https://t.me/+oemeUSzhSv44YmIy">here</a> 🇺🇸',
+														" with the reviews of our games, where everyone can leave their feedback"
+														'\nTo see the reviews, click on – <a href="https://t.me/+oemeUSzhSv44YmIy"> here</a> 🇺🇸',
 														kb=en_in_reviews)
 
 
@@ -1123,7 +1123,7 @@ async def it_buttons_rus(call: types.CallbackQuery):
     	image = faq
 
     	await edit_message(call, photo=image, caption="Мы ответили на часто задаваемые вопросы для вашего удобства"
-														'<a href="your telegraph">тут</a> 🇷🇺',
+														'<a href="your telegraph"> тут</a> 🇷🇺',
 														kb=rus_in_FAQ)
 
     elif call.data == "rus_in_Profile":
@@ -1163,9 +1163,9 @@ async def it_buttons_rus(call: types.CallbackQuery):
 
     	image = rus_reviews
 
-    	await edit_message(call, photo=image, caption='У нас есть <a href="https://t.me/+gaRe71AYudBmMTRi">чат</a>'
+    	await edit_message(call, photo=image, caption='У нас есть <a href="https://t.me/+gaRe71AYudBmMTRi">чат </a>'
     													"с отзывами наших игр, где каждый может оставить свой отзыв"
-    													'\nЧтобы посмотреть отзывы нажми – <a href="https://t.me/+gaRe71AYudBmMTRi">здесь</a> 🇷🇺',
+    													'\nЧтобы посмотреть отзывы нажми – <a href="https://t.me/+gaRe71AYudBmMTRi"> здесь</a> 🇷🇺',
 														kb=rus_in_reviews)
 
 
